@@ -1,0 +1,231 @@
+@prefix : <http://anonymous.org/data/> .
+@prefix vocab: <http://anonymous.org/vocab/> .
+@prefix nanopub: <http://www.nanopub.org/nschema#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+##############################################################
+
+:CIG-DB = {
+    :CIG-DB rdf:type vocab:ClinicalGuideline, owl:NamedIndividual ;
+        rdfs:label "CIG for Diabetes Mellitus"@en .
+
+    :RecDB-AntiThrombotic1_nanopub a nanopub:Nanopublication .
+
+    :RecDB-AntiThrombotic2_nanopub a nanopub:Nanopublication .
+
+    :RecDM-ReduceLBS_nanopub a nanopub:Nanopublication .
+
+}
+
+##############################################################
+
+:RecDB-AntiThrombotic1_assertion = {
+    :RecDB-AntiThrombotic1_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Avoid thrombi"@en ;
+        vocab:strength "should"^^xsd:string ;
+        vocab:partOf :CIG-DB ;
+        vocab:aboutExecutionOf :ActAdministerNSAID;
+        vocab:basedOn :CBNSAIDCoagulation_assertion .
+}
+
+:RecDB-AntiThrombotic1_provenance = {
+    :RecDB-AntiThrombotic1_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecDB-AntiThrombotic1_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecDB-AntiThrombotic1_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecDB-AntiThrombotic1_publicationinfo = {
+    :RecDB-AntiThrombotic1_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecDB-AntiThrombotic1_assertion ;
+        nanopub:hasProvenance :RecDB-AntiThrombotic1_provenance .
+
+}
+
+##############################################################
+
+:RecDB-AntiThrombotic2_assertion = {
+    :RecDB-AntiThrombotic2_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Avoid thrombi"@en ;
+        vocab:strength "should"^^xsd:string ;
+        vocab:partOf :CIG-DB ;
+        vocab:aboutExecutionOf :ActAdministerDipyridamole ; #:ActAdministerTramadol; Changed for HealthINF Extension at Springer
+        vocab:basedOn :CBDipyridamoleThrombus_assertion . #:CBTramadolCoagulation_assertion .
+}
+
+:RecDB-AntiThrombotic2_provenance = {
+    :RecDB-AntiThrombotic2_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecDB-AntiThrombotic2_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecDB-AntiThrombotic2_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecDB-AntiThrombotic2_publicationinfo = {
+    :RecDB-AntiThrombotic2_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecDB-AntiThrombotic2_assertion ;
+        nanopub:hasProvenance :RecDB-AntiThrombotic2_provenance .
+
+}
+
+##############################################################
+
+:RecDM-ReduceLBS_assertion = {
+    :RecDM-ReduceLBS_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Reduce blood sugar level"@en ;
+        vocab:strength "should"^^xsd:string ;
+        vocab:partOf :CIG-DB ;
+        vocab:aboutExecutionOf :ActAdministerInsulin;
+        vocab:basedOn :CBInsulinLBS_assertion .
+}
+
+:RecDM-ReduceLBS_provenance = {
+    :RecDM-ReduceLBS_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecDM-ReduceLBS_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecDM-ReduceLBS_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecDM-ReduceLBS_publicationinfo = {
+    :RecDM-ReduceLBS_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecDM-ReduceLBS_assertion ;
+        nanopub:hasProvenance :RecDM-ReduceLBS_provenance .
+
+}
+
+##############################################################
+
+##############################################################
+
+:CIG-HT = {
+    :CIG-HT rdf:type vocab:ClinicalGuideline, owl:NamedIndividual ;
+        rdfs:label "CIG for Hypertension"@en .
+
+    :RecHT-Diuretic_nanopub a nanopub:Nanopublication .
+
+    :RecHT-AntiThrombotic_nanopub a nanopub:Nanopublication .
+
+}
+
+##############################################################
+
+:RecHT-Diuretic_assertion = {
+    :RecHT-Diuretic_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Reduce blood pressure"@en ;
+        vocab:strength "should"^^xsd:string ;
+        vocab:partOf :CIG-HT ;
+        vocab:aboutExecutionOf :ActAdministerThiazide;
+        vocab:basedOn :CBThiazideBP_assertion .
+}
+
+:RecHT-Diuretic_provenance = {
+    :RecHT-Diuretic_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecHT-Diuretic_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecHT-Diuretic_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecHT-Diuretic_publicationinfo = {
+    :RecHT-Diuretic_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecHT-Diuretic_assertion ;
+        nanopub:hasProvenance :RecHT-Diuretic_provenance .
+
+}
+
+##############################################################
+
+##############################################################
+## Added for HealthINF Extension at Springer
+:RecHT-AntiThrombotic_assertion = {
+    :RecHT-AntiThrombotic_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Avoid thrombi"@en ;
+        vocab:strength "should"^^xsd:string ;
+        vocab:partOf :CIG-HT ;
+        vocab:aboutExecutionOf :ActAdministerClopidogrel;
+        vocab:basedOn :CBClopidogrelThrombus_assertion .
+}
+
+:RecHT-AntiThrombotic_provenance = {
+    :RecHT-AntiThrombotic_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecHT-AntiThrombotic_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecHT-AntiThrombotic_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecHT-AntiThrombotic_publicationinfo = {
+    :RecHT-AntiThrombotic_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecHT-AntiThrombotic_assertion ;
+        nanopub:hasProvenance :RecHT-AntiThrombotic_provenance .
+
+}
+
+##############################################################
+
+##############################################################
+
+:CIG-OA = {
+    :CIG-OA rdf:type vocab:ClinicalGuideline, owl:NamedIndividual ;
+        rdfs:label "CIG for Osteoarthritis"@en .
+
+    :RecOA-AvoidGIB_nanopub a nanopub:Nanopublication .
+
+    :RecOA-Painkiller_nanopub a nanopub:Nanopublication .
+}
+
+##############################################################
+
+:RecOA-AvoidGIB_assertion = {
+    :RecOA-AvoidGIB_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Avoid gastrointestinal bleeding"@en ;
+        vocab:strength "should-not"^^xsd:string ;
+        vocab:partOf :CIG-OA ;
+        vocab:aboutExecutionOf :ActAdministerAspirin;
+        vocab:basedOn :CBAspirinGIB_assertion .
+}
+
+:RecOA-AvoidGIB_provenance = {
+    :RecOA-AvoidGIB_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecOA-AvoidGIB_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecOA-AvoidGIB_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecOA-AvoidGIB_publicationinfo = {
+    :RecOA-AvoidGIB_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecOA-AvoidGIB_assertion ;
+        nanopub:hasProvenance :RecOA-AvoidGIB_provenance .
+
+}
+
+
+##############################################################
+
+:RecOA-Painkiller_assertion = {
+    :RecOA-Painkiller_assertion a vocab:ClinicalRecommendation ;
+        rdfs:label "Reduce pain"@en ;
+        vocab:strength "should"^^xsd:string ;
+        vocab:partOf :CIG-OA ;
+        vocab:aboutExecutionOf :ActAdministerIbuprofen;
+        vocab:basedOn :CBIbuprofenPain_assertion .
+}
+
+:RecOA-Painkiller_provenance = {
+    :RecOA-Painkiller_provenance a oa:Annotation ;
+        oa:hasBody vocab:RecOA-Painkiller_assertion ;
+        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    :RecOA-Painkiller_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+}
+
+:RecOA-Painkiller_publicationinfo = {
+    :RecOA-Painkiller_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
+        nanopub:hasAssertion :RecOA-Painkiller_assertion ;
+        nanopub:hasProvenance :RecOA-Painkiller_provenance .
+
+}
+
+##############################################################
