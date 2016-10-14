@@ -5,7 +5,6 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ##############################################################
@@ -60,7 +59,7 @@ data:CBNSAIDCoagulation {
     data:CBNSAIDCoagulation
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBNSAIDCoagulation_provenance {
@@ -94,7 +93,7 @@ data:CBIbuprofenPain {
     data:CBIbuprofenPain
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBIbuprofenPain_provenance {
@@ -128,7 +127,7 @@ data:CBDipyridamoleThrombus {
     data:CBDipyridamoleThrombus
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBDipyridamoleThrombus_provenance {
@@ -162,7 +161,7 @@ data:CBInsulinLBS {
     data:CBInsulinLBS
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBInsulinLBS_provenance {
@@ -196,7 +195,7 @@ data:CBThiazideBP {
     data:CBThiazideBP
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBThiazideBP_provenance {
@@ -230,7 +229,7 @@ data:CBClopidogrelThrombus {
     data:CBClopidogrelThrombus
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBClopidogrelThrombus_provenance {
