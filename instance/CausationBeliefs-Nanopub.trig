@@ -8,469 +8,244 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-data:CBAspirinGIB_nanopub a nanopub:Nanopublication .
-
-data:CBAspirinPain_nanopub a nanopub:Nanopublication .
-
-data:CBAspirinThrombus_nanopub a nanopub:Nanopublication .
-
-data:CBClopidogrelThrombus_nanopub a nanopub:Nanopublication .
-
-data:CBDipyridamoleThrombus_nanopub a nanopub:Nanopublication .
-
-data:CBEradicationTherapyUlcer_nanopub a nanopub:Nanopublication .
-
-data:CBIbuprofenBP_nanopub a nanopub:Nanopublication .
-
-data:CBIbuprofenCoagulation_nanopub a nanopub:Nanopublication .
-
-data:CBIbuprofenPain_nanopub a nanopub:Nanopublication .
-
-data:CBInsulinLBS_nanopub a nanopub:Nanopublication .
-
-data:CBNSAIDCoagulation_nanopub a nanopub:Nanopublication .
-
-data:CBNSAIDPain_nanopub a nanopub:Nanopublication .
-
-data:CBNSAIDThrombus_nanopub a nanopub:Nanopublication .
-
-data:CBPPIGIB_nanopub a nanopub:Nanopublication .
-
-data:CBPPIUlcer_nanopub a nanopub:Nanopublication .
-
-data:CBThiazideBP_nanopub a nanopub:Nanopublication .
-
-data:CBThiazideLBS_nanopub a nanopub:Nanopublication .
-
-data:CBTramadolCoagulation_nanopub a nanopub:Nanopublication .
-
-data:CBTramadolPain_nanopub a nanopub:Nanopublication .
-
-data:CBTramadolThrombus_nanopub a nanopub:Nanopublication .
-
+##############################################################
+# NANOPUBLICATIONS FOR THE CAUSATION BELIEFS
 ##############################################################
 
-
-data:CBIbuprofenBP_assertion = {
-    data:ActAdministerIbuprofen vocab:causes data:TrIncreaseBP .
-    data:CBIbuprofenBP_assertion vocab:frequency "always"^^xsd:string .
-    data:CBIbuprofenBP_assertion a vocab:CausationBelief .
+data:CBAspirinGIB_head {
+	  data:CBAspirinGIB_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBAspirinGIB ;
+        nanopub:hasProvenance         data:CBAspirinGIB_provenance ;
+		    nanopub:hasPublicationInfo    data:CBAspirinGIB_publicationinfo .
 }
 
-data:CBIbuprofenBP_provenance = {
-    data:CBIbuprofenBP_provenance a oa:Annotation ;
-        oa:hasBody data:CBIbuprofenBP_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBIbuprofenBP_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBAspirinGIB {
+    data:ActAdministerAspirin
+        vocab:causes                  data:TrIncreaseRiskGIB .
+    data:CBAspirinGIB
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBIbuprofenBP_publicationinfo = {
-    data:CBIbuprofenBP_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBIbuprofenBP_assertion ;
-        nanopub:hasProvenance data:CBIbuprofenBP_provenance .
+data:CBAspirinGIB_provenance {
+    data:CBAspirinGIB_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBAspirinGIB ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBAspirinGIB
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-data:CBNSAIDPain_assertion = {
-    data:ActAdministerNSAID vocab:causes data:TrPainkiller .
-    data:CBNSAIDPain_assertion vocab:frequency "always"^^xsd:string .
-    data:CBNSAIDPain_assertion a vocab:CausationBelief .
-}
-
-data:CBNSAIDPain_provenance = {
-    data:CBNSAIDPain_provenance a oa:Annotation ;
-        oa:hasBody data:CBNSAIDPain_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBNSAIDPain_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBNSAIDPain_publicationinfo = {
-    data:CBNSAIDPain_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBNSAIDPain_assertion ;
-        nanopub:hasProvenance data:CBNSAIDPain_provenance .
+data:CBAspirinGIB_publicationinfo {
+    data:CBAspirinGIB_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
 
-data:CBNSAIDCoagulation_assertion = {
-    data:ActAdministerNSAID vocab:causes data:TrDecreaseBC .
-    data:CBNSAIDCoagulation_assertion vocab:frequency "always"^^xsd:string .
-    data:CBNSAIDCoagulation_assertion a vocab:CausationBelief .
+data:CBNSAIDCoagulation_head {
+	  data:CBNSAIDCoagulation_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBNSAIDCoagulation ;
+        nanopub:hasProvenance         data:CBNSAIDCoagulation_provenance ;
+		    nanopub:hasPublicationInfo    data:CBNSAIDCoagulation_publicationinfo .
 }
 
-data:CBNSAIDCoagulation_provenance = {
-    data:CBNSAIDCoagulation_provenance a oa:Annotation ;
-        oa:hasBody data:CBNSAIDCoagulation_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBNSAIDCoagulation_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBNSAIDCoagulation {
+    data:ActAdministerNSAID
+				vocab:causes 									data:TrDecreaseBC .
+    data:CBNSAIDCoagulation
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBNSAIDCoagulation_publicationinfo = {
-    data:CBNSAIDCoagulation_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBNSAIDCoagulation_assertion ;
-        nanopub:hasProvenance data:CBNSAIDCoagulation_provenance .
+data:CBNSAIDCoagulation_provenance {
+    data:CBNSAIDCoagulation_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBNSAIDCoagulation ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBNSAIDCoagulation
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-data:CBIbuprofenPain_assertion = {
-    data:ActAdministerIbuprofen vocab:causes data:TrPainkiller .
-    data:CBIbuprofenPain_assertion vocab:frequency "always"^^xsd:string .
-    data:CBIbuprofenPain_assertion a vocab:CausationBelief .
-}
-
-data:CBIbuprofenPain_provenance = {
-    data:CBIbuprofenPain_provenance a oa:Annotation ;
-        oa:hasBody data:CBIbuprofenPain_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBIbuprofenPain_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBIbuprofenPain_publicationinfo = {
-    data:CBIbuprofenPain_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBIbuprofenPain_assertion ;
-        nanopub:hasProvenance data:CBIbuprofenPain_provenance .
+data:CBNSAIDCoagulation_publicationinfo {
+    data:CBNSAIDCoagulation_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
 
-data:CBThiazideLBS_assertion = {
-    data:ActAdministerThiazide vocab:causes data:TrIncreaseLBS .
-    data:CBThiazideLBS_assertion vocab:frequency "always"^^xsd:string .
-    data:CBThiazideLBS_assertion a vocab:CausationBelief .
+data:CBIbuprofenPain_head {
+	  data:CBIbuprofenPain_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBIbuprofenPain ;
+        nanopub:hasProvenance         data:CBIbuprofenPain_provenance ;
+		    nanopub:hasPublicationInfo    data:CBIbuprofenPain_publicationinfo .
 }
 
-data:CBThiazideLBS_provenance = {
-    data:CBThiazideLBS_provenance a oa:Annotation ;
-        oa:hasBody data:CBThiazideLBS_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBThiazideLBS_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBIbuprofenPain {
+    data:ActAdministerIbuprofen
+				vocab:causes 									data:TrPainkiller .
+    data:CBIbuprofenPain
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBThiazideLBS_publicationinfo = {
-    data:CBThiazideLBS_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBThiazideLBS_assertion ;
-        nanopub:hasProvenance data:CBThiazideLBS_provenance .
+data:CBIbuprofenPain_provenance {
+    data:CBIbuprofenPain_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBIbuprofenPain ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBIbuprofenPain
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-
-data:CBDipyridamoleThrombus_assertion = {
-    data:ActAdministerDipyridamole vocab:causes data:TrDecreaseBC .
-    data:CBDipyridamoleThrombus_assertion vocab:frequency "always"^^xsd:string .
-    data:CBDipyridamoleThrombus_assertion a vocab:CausationBelief .
-}
-
-data:CBDipyridamoleThrombus_provenance = {
-    data:CBDipyridamoleThrombus_provenance a oa:Annotation ;
-        oa:hasBody data:CBDipyridamoleThrombus_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBDipyridamoleThrombus_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBDipyridamoleThrombus_publicationinfo = {
-    data:CBDipyridamoleThrombus_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBDipyridamoleThrombus_assertion ;
-        nanopub:hasProvenance data:CBDipyridamoleThrombus_provenance .
+data:CBIbuprofenPain_publicationinfo {
+    data:CBIbuprofenPain_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
 
-data:CBPPIGIB_assertion = {
-    data:ActAdministerPPI vocab:causes data:TrDecreaseRiskGIB .
-    data:CBPPIGIB_assertion vocab:frequency "always"^^xsd:string .
-    data:CBPPIGIB_assertion a vocab:CausationBelief .
+data:CBDipyridamoleThrombus_head {
+	  data:CBDipyridamoleThrombus_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBDipyridamoleThrombus ;
+        nanopub:hasProvenance         data:CBDipyridamoleThrombus_provenance ;
+		    nanopub:hasPublicationInfo    data:CBDipyridamoleThrombus_publicationinfo .
 }
 
-data:CBPPIGIB_provenance = {
-    data:CBPPIGIB_provenance a oa:Annotation ;
-        oa:hasBody data:CBPPIGIB_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBPPIGIB_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBDipyridamoleThrombus {
+    data:ActAdministerDipyridamole
+				vocab:causes 									data:TrDecreaseBC .
+    data:CBDipyridamoleThrombus
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBPPIGIB_publicationinfo = {
-    data:CBPPIGIB_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBPPIGIB_assertion ;
-        nanopub:hasProvenance data:CBPPIGIB_provenance .
+data:CBDipyridamoleThrombus_provenance {
+    data:CBDipyridamoleThrombus_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBDipyridamoleThrombus ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBDipyridamoleThrombus
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-
-data:CBInsulinLBS_assertion = {
-    data:ActAdministerInsulin vocab:causes data:TrDecreaseLBS .
-    data:CBInsulinLBS_assertion vocab:frequency "always"^^xsd:string .
-    data:CBInsulinLBS_assertion a vocab:CausationBelief .
-}
-
-data:CBInsulinLBS_provenance = {
-    data:CBInsulinLBS_provenance a oa:Annotation ;
-        oa:hasBody data:CBInsulinLBS_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBInsulinLBS_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBInsulinLBS_publicationinfo = {
-    data:CBInsulinLBS_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBInsulinLBS_assertion ;
-        nanopub:hasProvenance data:CBInsulinLBS_provenance .
+data:CBDipyridamoleThrombus_publicationinfo {
+    data:CBDipyridamoleThrombus_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
 
-data:CBTramadolThrombus_assertion = {
-    data:ActAdministerTramadol vocab:causes data:TrDecreaseRiskThrombus .
-    data:CBTramadolThrombus_assertion vocab:frequency "always"^^xsd:string .
-    data:CBTramadolThrombus_assertion a vocab:CausationBelief .
+data:CBInsulinLBS_head {
+	  data:CBInsulinLBS_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBInsulinLBS ;
+        nanopub:hasProvenance         data:CBInsulinLBS_provenance ;
+		    nanopub:hasPublicationInfo    data:CBInsulinLBS_publicationinfo .
 }
 
-data:CBTramadolThrombus_provenance = {
-    data:CBTramadolThrombus_provenance a oa:Annotation ;
-        oa:hasBody data:CBTramadolThrombus_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBTramadolThrombus_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBInsulinLBS {
+    data:ActAdministerInsulin
+				vocab:causes 									data:TrDecreaseLBS .
+    data:CBInsulinLBS
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBTramadolThrombus_publicationinfo = {
-    data:CBTramadolThrombus_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBTramadolThrombus_assertion ;
-        nanopub:hasProvenance data:CBTramadolThrombus_provenance .
+data:CBInsulinLBS_provenance {
+    data:CBInsulinLBS_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBInsulinLBS ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBInsulinLBS
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-
-data:CBThiazideBP_assertion = {
-    data:ActAdministerThiazide vocab:causes data:TrDecreaseBP .
-    data:CBThiazideBP_assertion vocab:frequency "always"^^xsd:string .
-    data:CBThiazideBP_assertion a vocab:CausationBelief .
-}
-
-data:CBThiazideBP_provenance = {
-    data:CBThiazideBP_provenance a oa:Annotation ;
-        oa:hasBody data:CBThiazideBP_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBThiazideBP_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBThiazideBP_publicationinfo = {
-    data:CBThiazideBP_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBThiazideBP_assertion ;
-        nanopub:hasProvenance data:CBThiazideBP_provenance .
+data:CBInsulinLBS_publicationinfo {
+    data:CBInsulinLBS_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
 
-
-data:CBEradicationTherapyUlcer_assertion = {
-    data:ActEradicationTherapy vocab:causes data:TrHealUlcer .
-    data:CBEradicationTherapyUlcer_assertion vocab:frequency "always"^^xsd:string .
-    data:CBEradicationTherapyUlcer_assertion a vocab:CausationBelief .
+data:CBThiazideBP_head {
+	  data:CBThiazideBP_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBThiazideBP ;
+        nanopub:hasProvenance         data:CBThiazideBP_provenance ;
+		    nanopub:hasPublicationInfo    data:CBThiazideBP_publicationinfo .
 }
 
-
-data:CBEradicationTherapyUlcer_provenance = {
-    data:CBEradicationTherapyUlcer_provenance a oa:Annotation ;
-        oa:hasBody data:CBEradicationTherapyUlcer_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBEradicationTherapyUlcer_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBThiazideBP {
+    data:ActAdministerThiazide
+				vocab:causes 									data:TrDecreaseBP .
+    data:CBThiazideBP
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBEradicationTherapyUlcer_publicationinfo = {
-    data:CBEradicationTherapyUlcer_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBEradicationTherapyUlcer_assertion ;
-        nanopub:hasProvenance data:CBEradicationTherapyUlcer_provenance .
+data:CBThiazideBP_provenance {
+    data:CBThiazideBP_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBThiazideBP ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBThiazideBP
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-
-data:CBNSAIDThrombus_assertion = {
-    data:ActAdministerNSAID vocab:causes data:TrDecreaseRiskThrombus .
-    data:CBNSAIDThrombus_assertion vocab:frequency "always"^^xsd:string .
-    data:CBNSAIDThrombus_assertion a vocab:CausationBelief .
-}
-
-data:CBNSAIDThrombus_provenance = {
-    data:CBNSAIDThrombus_provenance a oa:Annotation ;
-        oa:hasBody data:CBNSAIDThrombus_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBNSAIDThrombus_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBNSAIDThrombus_publicationinfo = {
-    data:CBNSAIDThrombus_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBNSAIDThrombus_assertion ;
-        nanopub:hasProvenance data:CBNSAIDThrombus_provenance .
+data:CBThiazideBP_publicationinfo {
+    data:CBThiazideBP_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
 
-data:CBAspirinThrombus_assertion = {
-    data:ActAdministerAspirin vocab:causes data:TrDecreaseRiskThrombus .
-    data:CBAspirinThrombus_assertion vocab:frequency "always"^^xsd:string .
-    data:CBAspirinThrombus_assertion a vocab:CausationBelief .
+data:CBClopidogrelThrombus_head {
+	  data:CBClopidogrelThrombus_nanopub
+        a                             nanopub:Nanopublication ;
+        nanopub:hasAssertion          data:CBClopidogrelThrombus ;
+        nanopub:hasProvenance         data:CBClopidogrelThrombus_provenance ;
+		    nanopub:hasPublicationInfo    data:CBClopidogrelThrombus_publicationinfo .
 }
 
-data:CBAspirinThrombus_provenance = {
-    data:CBAspirinThrombus_provenance a oa:Annotation ;
-        oa:hasBody data:CBAspirinThrombus_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBAspirinThrombus_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+data:CBClopidogrelThrombus {
+    data:ActAdministerClopidogrel
+				vocab:causes 									data:TrDecreaseBC .
+    data:CBClopidogrelThrombus
+        a                             vocab:CausationBelief ;
+        vocab:strength                "L1"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string;
 }
 
-data:CBAspirinThrombus_publicationinfo = {
-    data:CBAspirinThrombus_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBAspirinThrombus_assertion ;
-        nanopub:hasProvenance data:CBAspirinThrombus_provenance .
-
+data:CBClopidogrelThrombus_provenance {
+    data:CBClopidogrelThrombus_provenance
+        a                             oa:Annotation ;
+        oa:hasBody                    data:CBClopidogrelThrombus ;
+        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
+    data:CBClopidogrelThrombus
+        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
 }
 
-##############################################################
-
-data:CBClopidogrelThrombus_assertion = {
-    data:ActAdministerClopidogrel vocab:causes data:TrDecreaseBC .
-    data:CBClopidogrelThrombus_assertion vocab:frequency "always"^^xsd:string .
-    data:CBClopidogrelThrombus_assertion a vocab:CausationBelief .
-}
-
-data:CBClopidogrelThrombus_provenance = {
-    data:CBClopidogrelThrombus_provenance a oa:Annotation ;
-        oa:hasBody data:CBClopidogrelThrombus_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBClopidogrelThrombus_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBClopidogrelThrombus_publicationinfo = {
-    data:CBClopidogrelThrombus_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBClopidogrelThrombus_assertion ;
-        nanopub:hasProvenance data:CBClopidogrelThrombus_provenance .
-
-}
-
-##############################################################
-
-data:CBPPIUlcer_assertion = {
-    data:ActAdministerPPI vocab:causes data:TrHealUlcer .
-    data:CBPPIUlcer_assertion vocab:frequency "always"^^xsd:string .
-    data:CBPPIUlcer_assertion a vocab:CausationBelief .
-}
-
-data:CBPPIUlcer_provenance = {
-    data:CBPPIUlcer_provenance a oa:Annotation ;
-        oa:hasBody data:CBPPIUlcer_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBPPIUlcer_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBPPIUlcer_publicationinfo = {
-    data:CBPPIUlcer_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBPPIUlcer_assertion ;
-        nanopub:hasProvenance data:CBPPIUlcer_provenance .
-}
-
-##############################################################
-
-data:CBIbuprofenCoagulation_assertion = {
-    data:ActAdministerIbuprofen vocab:causes data:TrDecreaseBC .
-    data:CBIbuprofenCoagulation_assertion vocab:frequency "always"^^xsd:string .
-    data:CBIbuprofenCoagulation_assertion a vocab:CausationBelief .
-}
-
-data:CBIbuprofenCoagulation_provenance = {
-    data:CBIbuprofenCoagulation_provenance a oa:Annotation ;
-        oa:hasBody data:CBIbuprofenCoagulation_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBIbuprofenCoagulation_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBIbuprofenCoagulation_publicationinfo = {
-    data:CBIbuprofenCoagulation_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBIbuprofenCoagulation_assertion ;
-        nanopub:hasProvenance data:CBIbuprofenCoagulation_provenance .
-
-}
-
-##############################################################
-
-data:CBTramadolCoagulation_assertion = {
-    data:ActAdministerTramadol vocab:causes data:TrDecreaseBC .
-    data:CBTramadolCoagulation_assertion vocab:frequency "always"^^xsd:string .
-    data:CBTramadolCoagulation_assertion a vocab:CausationBelief .
-}
-
-data:CBTramadolCoagulation_provenance = {
-    data:CBTramadolCoagulation_provenance a oa:Annotation ;
-        oa:hasBody data:CBTramadolCoagulation_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBTramadolCoagulation_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBTramadolCoagulation_publicationinfo = {
-    data:CBTramadolCoagulation_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBTramadolCoagulation_assertion ;
-        nanopub:hasProvenance data:CBTramadolCoagulation_provenance .
-}
-
-##############################################################
-
-data:CBAspirinPain_assertion = {
-    data:ActAdministerAspirin vocab:causes data:TrPainkiller .
-    data:CBAspirinPain_assertion vocab:frequency "always"^^xsd:string .
-    data:CBAspirinPain_assertion a vocab:CausationBelief .
-}
-
-data:CBAspirinPain_provenance = {
-    data:CBAspirinPain_provenance a oa:Annotation ;
-        oa:hasBody data:CBAspirinPain_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBAspirinPain_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBAspirinPain_publicationinfo = {
-    data:CBAspirinPain_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBAspirinPain_assertion ;
-        nanopub:hasProvenance data:CBAspirinPain_provenance .
-}
-
-##############################################################
-
-data:CBAspirinGIB_assertion = {
-    data:ActAdministerAspirin vocab:causes data:TrIncreaseRiskGIB .
-    data:CBAspirinGIB_assertion vocab:frequency "always"^^xsd:string .
-    data:CBAspirinGIB_assertion a vocab:CausationBelief .
-}
-
-data:CBAspirinGIB_provenance = {
-    data:CBAspirinGIB_provenance a oa:Annotation ;
-        oa:hasBody data:CBAspirinGIB_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBAspirinGIB_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBAspirinGIB_publicationinfo = {
-    data:CBAspirinGIB_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBAspirinGIB_assertion ;
-        nanopub:hasProvenance data:CBAspirinGIB_provenance .
-
-}
-
-##############################################################
-
-data:CBTramadolPain_assertion = {
-    data:ActAdministerTramadol vocab:causes data:TrPainkiller .
-    data:CBTramadolPain_assertion vocab:frequency "always"^^xsd:string .
-    data:CBTramadolPain_assertion a vocab:CausationBelief .
-}
-
-data:CBTramadolPain_provenance = {
-    data:CBTramadolPain_provenance a oa:Annotation ;
-        oa:hasBody data:CBTramadolPain_assertion ;
-        oa:hasTarget [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    data:CBTramadolPain_assertion prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
-}
-
-data:CBTramadolPain_publicationinfo = {
-    data:CBTramadolPain_nanopub prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> ;
-        nanopub:hasAssertion data:CBTramadolPain_assertion ;
-        nanopub:hasProvenance data:CBTramadolPain_provenance .
+data:CBClopidogrelThrombus_publicationinfo {
+    data:CBClopidogrelThrombus_nanopub
+        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
+		    prov:wasAttributedTo          data:Veruska.
 }
 
 ##############################################################
