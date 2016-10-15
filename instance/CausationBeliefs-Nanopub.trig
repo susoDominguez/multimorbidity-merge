@@ -25,7 +25,7 @@ data:CBAspirinGIB {
     data:CBAspirinGIB
         a                             vocab:CausationBelief ;
         vocab:strength                "L1"^^xsd:string;
-        vocab:frequency               "always"^^xsd:string;
+        vocab:frequency               "always"^^xsd:string.
 }
 
 data:CBAspirinGIB_provenance {
