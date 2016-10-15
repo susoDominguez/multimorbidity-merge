@@ -39,7 +39,7 @@
         oa:hasBody                    :RecDB-AntiThrombotic1 ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecDB-AntiThrombotic1
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecDB-AntiThrombotic1_publicationinfo {
@@ -74,7 +74,7 @@
         oa:hasBody                    :RecDB-AntiThrombotic2 ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecDB-AntiThrombotic2
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecDB-AntiThrombotic2_publicationinfo {
@@ -111,7 +111,7 @@
         oa:hasBody                    :RecDM-ReduceLBS ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecDM-ReduceLBS
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecDM-ReduceLBS_publicationinfo {
@@ -154,7 +154,7 @@
         oa:hasBody                    :RecHT-Diuretic ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecHT-Diuretic
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecHT-Diuretic_publicationinfo {
@@ -192,7 +192,7 @@
         oa:hasBody                    :RecHT-AntiThrombotic ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecHT-AntiThrombotic
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecHT-AntiThrombotic_publicationinfo {
@@ -235,7 +235,7 @@
         oa:hasBody                    :RecOA-AvoidGIB ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecOA-AvoidGIB
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecOA-AvoidGIB_publicationinfo {
@@ -270,7 +270,7 @@
         oa:hasBody                    :RecOA-Painkiller ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     :RecOA-Painkiller
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 :RecOA-Painkiller_publicationinfo {

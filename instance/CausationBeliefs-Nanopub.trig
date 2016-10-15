@@ -34,7 +34,7 @@ data:CBAspirinGIB_provenance {
         oa:hasBody                    data:CBAspirinGIB ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBAspirinGIB
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBAspirinGIB_publicationinfo {
@@ -68,7 +68,7 @@ data:CBNSAIDCoagulation_provenance {
         oa:hasBody                    data:CBNSAIDCoagulation ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBNSAIDCoagulation
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBNSAIDCoagulation_publicationinfo {
@@ -102,7 +102,7 @@ data:CBIbuprofenPain_provenance {
         oa:hasBody                    data:CBIbuprofenPain ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBIbuprofenPain
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBIbuprofenPain_publicationinfo {
@@ -136,7 +136,7 @@ data:CBDipyridamoleThrombus_provenance {
         oa:hasBody                    data:CBDipyridamoleThrombus ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBDipyridamoleThrombus
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBDipyridamoleThrombus_publicationinfo {
@@ -170,7 +170,7 @@ data:CBInsulinLBS_provenance {
         oa:hasBody                    data:CBInsulinLBS ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBInsulinLBS
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBInsulinLBS_publicationinfo {
@@ -204,7 +204,7 @@ data:CBThiazideBP_provenance {
         oa:hasBody                    data:CBThiazideBP ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBThiazideBP
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBThiazideBP_publicationinfo {
@@ -238,7 +238,7 @@ data:CBClopidogrelThrombus_provenance {
         oa:hasBody                    data:CBClopidogrelThrombus ;
         oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
     data:CBClopidogrelThrombus
-        prov:wasDerivedFrom           prov:wasDerivedFrom <http://hdl.handle.net/10222/43703> .
+        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
 }
 
 data:CBClopidogrelThrombus_publicationinfo {
