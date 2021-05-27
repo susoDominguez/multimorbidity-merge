@@ -4,6 +4,8 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
 @base <http://anonymous.org/vocab/> .
 
 <http://anonymous.org/vocab/> rdf:type owl:Ontology .
@@ -34,11 +36,22 @@
 :TransitionType rdf:type owl:Class ;
     rdfs:subClassOf :EventType .
 
+#syntactic sugar for completion purposes when building JSON for DSS
+:TropeType rdf:type owl:Class ;
+    rdfs:subClassOf :ObjectType .
+
 :ActionType rdf:type owl:Class ;
     rdfs:subClassOf :EventType .
 
 :CareActionType rdf:type owl:Class ;
     rdfs:subClassOf :ActionType .
+
+#special case for non drug therapies
+:NonDrugAdministrationType rdf:type owl:Class ;
+    rdfs:subClassOf :CareActionType .
+
+:NonDrugType rdf:type owl:Class;
+    rdfs:subClassOf :Type .
 
 :DrugAdministrationType rdf:type owl:Class ;
     rdfs:subClassOf :CareActionType .
@@ -88,6 +101,9 @@ rdfs:subClassOf owl:Thing .
 :ComposedGuideline rdf:type owl:Class ;
     rdfs:subClassOf :ClinicalGuideline .
 
+#Guideline that is part of a strictly larger guideline
+:SubGuideline rdf:type owl:Class ;
+    rdfs:subClassOf :ClinicalGuideline .
 
 #################################################################
 #
@@ -119,9 +135,20 @@ rdfs:subClassOf owl:Thing .
     rdfs:domain :DrugAdministrationType;
     rdfs:range :DrugType.
 
+#same as administratioOf but for nonDrug types
+:applicationOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf :participationOf ;
+    rdfs:domain :NonDrugAdministrationType;
+    rdfs:range :NonDrugType.
+
 :hasPreSituation rdf:type owl:ObjectProperty ;
     rdfs:range :SituationType ;
     rdfs:domain :TransitionType .
+
+#syntactic sugar for dss
+:affects rdf:type owl:ObjectProperty ;
+    rdfs:range :TransitionType ;
+    rdfs:domain :TropeType .
 
 :hasFilterCondition rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPreSituation .
@@ -132,6 +159,7 @@ rdfs:subClassOf owl:Thing .
 :hasExpectedSituation rdf:type owl:ObjectProperty ;
     rdfs:range :SituationType ;
     rdfs:domain :TransitionType .
+
 
 :inverseToTransition rdf:type owl:ObjectProperty ,
                             owl:SymmetricProperty.
@@ -174,6 +202,20 @@ rdfs:subClassOf owl:Thing .
     rdfs:range :CausationBelief ;
     rdfs:domain :CausationBelief .
 
+#################################################################
+#   Regulation-related Properties
+#################################################################
+
+#is a subguideline of a particular clinical guideline
+:isSubGuidelineOf rdf:type owl:FunctionalProperty ,
+                    owl:ObjectProperty ;
+            rdfs:range :Regulation ;
+            rdfs:domain :SubGuideline .
+
+#the nanopublication, which it is a graph, is part of one or more clinical guidelines
+:isPartOf rdf:type owl:ObjectProperty ;
+            rdfs:range :Regulation ;
+            rdfs:domain np:Nanopublication .
 
 #################################################################
 #   Norm-related Properties
@@ -205,3 +247,19 @@ rdfs:subClassOf owl:Thing .
 
 :strength rdf:type owl:DatatypeProperty ;
     rdfs:domain :Norm .
+
+#Motivation on applying a particular recommendation; also, explanation.
+:motivation rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Norm .
+
+#derivative of a transition -syntactic sugar for DSS [Maintain | Increase | Decrease]
+:derivative rdf:type owl:DatatypeProperty ;
+    rdfs:domain :TransitionType .
+
+#contribution of this causation belief to the recommendation [positive | negative]
+:contribution rdf:type owl:DatatypeProperty ;
+    rdfs:domain :CausationBelief .
+
+#state of the situation with respect to the affected property. E.g., severe, mild, low risk, etc
+:stateOf rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SituationType .
