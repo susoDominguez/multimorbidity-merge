@@ -12,89 +12,89 @@
 @prefix nanopub: <http://www.nanopub.org/nschema#> .
 @prefix prov:  <http://www.w3.org/ns/prov#> .
 
-:SitDUHealed  a           vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Ulcer is healed"@en ;
-        vocab:stateOf     "healed" ;
-        vocab:umlsCode    "C1265810" .
+:SitDUHealed  a         vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Ulcer is healed"@en ;
+        vocab:stateOf   "healed" ;
+        vocab:umlsCode  "C1265810" .
 
-:SitDUUnhealed  a         vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Ulcer is unhealed"@en ;
-        vocab:stateOf     "unhealed" ;
-        vocab:umlsCode    "C0041582" .
+:SitDUUnhealed  a       vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Ulcer is unhealed"@en ;
+        vocab:stateOf   "unhealed" ;
+        vocab:umlsCode  "C0041582" .
 
-:SitHPyloriNegative  a    vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "H. Pylori exam is negative"@en ;
-        vocab:stateOf     "negative" .
+:SitHPyloriNegative  a  vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label     "H. Pylori exam is negative"@en ;
+        vocab:stateOf  "negative" .
 
-:SitHPyloriPositive a vocab:SituationType, owl:NamedIndividual ;
-                    rdfs:label      "H. Pylori exam is positive"@en ;
-                    vocab:stateOf     "positive" ;
-                    vocab:umlsCode   "C0079488".
+:SitHPyloriPositive  a  vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "H. Pylori exam is positive"@en ;
+        vocab:stateOf   "positive" ;
+        vocab:umlsCode  "C0079488" .
 
-:SitHighBP  a             vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Blood pressure is high"@en ;
-        vocab:stateOf     "high" ;
-        vocab:umlsCode    "C3843080" .
+:SitHighBP  a           vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Blood pressure is high"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "C3843080" .
 
-:SitNormalBP  a           vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Blood pressure is normal"@en ;
-        vocab:stateOf     "normal" .
+:SitNormalBP  a        vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label     "Blood pressure is normal"@en ;
+        vocab:stateOf  "normal" .
 
-:SitHighLBS  a         vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Level of Blood Sugar is High"@en ;
-        vocab:stateOf     "high" ;
-        vocab:umlsCode    "C3843079" .
+:SitHighLBS  a          vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Level of Blood Sugar is High"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "C3843079" .
 
-:SitNormalLBS  a          vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Level of Blood Sugar is normal"@en ;
-        vocab:stateOf     "normal" .
+:SitNormalLBS  a       vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label     "Level of Blood Sugar is normal"@en ;
+        vocab:stateOf  "normal" .
 
-:SitHighRiskGIB  a        vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Risk of Gastrointestinal Bleeding is High"@en ;
-        vocab:stateOf     "high" ;
-        vocab:umlsCode    "C0017181" .
+:SitHighRiskGIB  a      vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Risk of Gastrointestinal Bleeding is High"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "C0017181" .
 
-:SitLowRiskGIB  a         vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Risk of Gastrointestinal Bleeding is low"@en ;
-        vocab:stateOf     "low" .
+:SitLowRiskGIB  a      vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label     "Risk of Gastrointestinal Bleeding is low"@en ;
+        vocab:stateOf  "low" .
 
-:SitHighRiskThrombus  a   vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Risk of Thrombus is High"@en ;
-        vocab:stateOf     "high" ;
-        vocab:umlsCode    "C0155749" .
+:SitHighRiskThrombus  a  vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Risk of Thrombus is High"@en ;
+        vocab:stateOf   "high" ;
+        vocab:umlsCode  "C0155749" .
 
-:SitLowRiskThrombus  a    vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Risk of Thrombus is Low"@en ;
-        vocab:stateOf     "low" ;
-        vocab:umlsCode    "null" .
+:SitLowRiskThrombus  a  vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Risk of Thrombus is Low"@en ;
+        vocab:stateOf   "low" ;
+        vocab:umlsCode  "null" .
 
 :SitMediumRiskThrombus
-        a                 vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Risk of Thrombus is Medium"@en ;
-        vocab:stateOf     "medium" ;
-        vocab:umlsCode    "C0155749" .
+        a               vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Risk of Thrombus is Medium"@en ;
+        vocab:stateOf   "medium" ;
+        vocab:umlsCode  "C0155749" .
 
 :SitNormalBC  a        vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Blood Coagulation is Normal"@en ;
-        vocab:stateOf     "normal" .
+        rdfs:label     "Blood Coagulation is Normal"@en ;
+        vocab:stateOf  "normal" .
 
-:SitLowBC  a              vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Blood Coagulation is Low"@en ;
-        vocab:stateOf     "low" ;
-        vocab:umlsCode    "C0005779" .
+:SitLowBC  a            vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Blood Coagulation is Low"@en ;
+        vocab:stateOf   "low" ;
+        vocab:umlsCode  "C0005779" .
 
-:SitPatientHasNoPain  a   vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Patient has no Pain"@en ;
-        vocab:stateOf     "no pain" .
+:SitPatientHasNoPain  a  vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label     "Patient has no Pain"@en ;
+        vocab:stateOf  "no pain" .
 
-:SitPatientHasPain  a     vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Patient has Pain"@en ;
-        vocab:stateOf     "pain" ;
-        vocab:umlsCode    "C0030193" .
+:SitPatientHasPain  a   vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label      "Patient has Pain"@en ;
+        vocab:stateOf   "pain" ;
+        vocab:umlsCode  "C0030193" .
 
-:SitNonSteroidalDrug  a   vocab:SituationType , owl:NamedIndividual ;
-        rdfs:label        "Drug Type is non steroidal"@en ;
-        vocab:stateOf     "non steroidal" .
+:SitNonSteroidalDrug  a  vocab:SituationType , owl:NamedIndividual ;
+        rdfs:label     "Drug Type is non steroidal"@en ;
+        vocab:stateOf  "non steroidal" .
 
 :PropUlcer  a       owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "state of ulcer"@en .
@@ -102,7 +102,7 @@
 :PropHPylori  a     owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "H. Pylori exam"@en .
 
-:PropBPressure  a   owl:NamedIndividual , vocab:TropeType ;
+:PropBP  a          owl:NamedIndividual , vocab:TropeType ;
         rdfs:label  "Blood pressure"@en .
 
 :PropLBS  a         owl:NamedIndividual , vocab:TropeType ;
@@ -199,40 +199,12 @@
         vocab:hasTransformableSituation
                 :SitDUUnhealed .
 
-:TrAntinflammatory rdf:type vocab:TransitionType, owl:NamedIndividual .
+:TrAntinflammatory  a  owl:NamedIndividual , vocab:TransitionType .
 
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :TrIncreaseRiskGIB
-                        :TrDecreaseRiskGIB
-                        :TrIncreaseBP
-                        :TrDecreaseBP
-                        :TrIncreaseLBS
-                        :TrDecreaseLBS
-                        :TrPainkiller
-                        :TrDecreaseRiskThrombus
-                        :TrIncreaseRiskThrombus
-                        :TrHealingUlcer
-                        :TrDecreaseBC
-                      )
+[ a                    owl:AllDifferent ;
+  owl:distinctMembers  ( :TrIncreaseRiskGIB :TrDecreaseRiskGIB :TrIncreaseBP :TrDecreaseBP :TrIncreaseLBS :TrDecreaseLBS :TrPainkiller :TrDecreaseRiskThrombus :TrIncreaseRiskThrombus :TrHealingUlcer :TrDecreaseBC )
 ] .
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :SitDUHealed
-                        :SitDUUnhealed
-                        :SitHPyloriNegative
-                        :SitHPyloriPositive
-                        :SitHighBP
-                        :SitHighLBS
-                        :SitHighRiskGIB
-                        :SitHighRiskThrombus
-                        :SitLowRiskGIB
-                        :SitLowRiskThrombus
-                        :SitMediumRiskThrombus
-                        :SitNormalBP
-                        :SitNormalLBS
-                        :SitPatientHasNoPain
-                        :SitPatientHasPain
-                        :SitNormalBC
-                        :SitLowBC
 
-                      )
+[ a                    owl:AllDifferent ;
+  owl:distinctMembers  ( :SitDUHealed :SitDUUnhealed :SitHPyloriNegative :SitHPyloriPositive :SitHighBP :SitHighLBS :SitHighRiskGIB :SitHighRiskThrombus :SitLowRiskGIB :SitLowRiskThrombus :SitMediumRiskThrombus :SitNormalBP :SitNormalLBS :SitPatientHasNoPain :SitPatientHasPain :SitNormalBC :SitLowBC )
 ] .
