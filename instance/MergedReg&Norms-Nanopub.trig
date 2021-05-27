@@ -1,268 +1,262 @@
-@prefix : <http://anonymous.org/data/> .
+@prefix :      <http://anonymous.org/data/> .
+@prefix oa:    <http://www.w3.org/ns/oa#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix vocab: <http://anonymous.org/vocab/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix nanopub: <http://www.nanopub.org/nschema#> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
 
-##############################################################
+:CIG-OA-HT-DB  a    vocab:ClinicalGuideline , owl:NamedIndividual ;
+        rdfs:label  "Merged CIG for Osteoarthritis, Hypertension and Diabetes"@en .
 
-:CIG-OA-HT-DB = {
-    :CIG-OA-HT-DB rdf:type vocab:ClinicalGuideline, owl:NamedIndividual ;
-        rdfs:label "Merged CIG for Osteoarthritis, Hypertension and Diabetes"@en .
+:RecOA-Painkiller {
+    :RecOA-Painkiller
+            a                       vocab:ClinicalRecommendation ;
+            rdfs:label              "Reduce pain"@en ;
+            vocab:aboutExecutionOf  :ActAdministerIbuprofen ;
+            vocab:basedOn           :CBIbuprofenPain ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should" .
+    
+    :CBIbuprofenPain  vocab:contribution  "positive" .
 }
 
-##############################################################
-:RecOA-HT-DB-AntiThrombotic1_head {
-	  :RecOA-HT-DB-AntiThrombotic1_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-AntiThrombotic1 ;
-        nanopub:hasProvenance         :RecOA-HT-DB-AntiThrombotic1_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-AntiThrombotic1_publicationinfo .
+:RecOA-Painkiller_head {
+    :RecOA-Painkiller_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecOA-Painkiller ;
+            nanopub:hasProvenance       :RecOA-Painkiller_provenance ;
+            nanopub:hasPublicationInfo  :RecOA-Painkiller_publicationinfo .
 }
 
-:RecOA-HT-DB-AntiThrombotic1 {
-    :RecOA-HT-DB-AntiThrombotic1
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Avoid thrombi"@en ;
-        vocab:strength                "should"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf        :ActAdministerNSAID;
-        vocab:basedOn                 :CBNSAIDCoagulation .
+:RecOA-Painkiller_provenance {
+    :RecOA-Painkiller
+            prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecOA-Painkiller_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecOA-Painkiller ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-AntiThrombotic1_provenance {
-    :RecOA-HT-DB-AntiThrombotic1_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-AntiThrombotic1 ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-AntiThrombotic1
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecOA-Painkiller_publicationinfo {
+    :RecOA-Painkiller_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
 
-:RecOA-HT-DB-AntiThrombotic1_publicationinfo {
-    :RecOA-HT-DB-AntiThrombotic1_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
+:RecOA-AvoidGIB {
+    :RecOA-AvoidGIB  a              vocab:ClinicalRecommendation ;
+            rdfs:label              "Avoid gastrointestinal bleeding"@en ;
+            vocab:aboutExecutionOf  :ActAdministerAspirin ;
+            vocab:basedOn           :CBAspirinGIB ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should-not" .
+    
+    :CBAspirinGIB  vocab:contribution  "positive" .
 }
 
-##############################################################
-
-:RecOA-HT-DB-AntiThrombotic2_head {
-	  :RecOA-HT-DB-AntiThrombotic2_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-AntiThrombotic2 ;
-        nanopub:hasProvenance         :RecOA-HT-DB-AntiThrombotic2_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-AntiThrombotic2_publicationinfo .
+:RecOA-AvoidGIB_head {
+    :RecOA-AvoidGIB_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecOA-AvoidGIB ;
+            nanopub:hasProvenance       :RecOA-AvoidGIB_provenance ;
+            nanopub:hasPublicationInfo  :RecOA-AvoidGIB_publicationinfo .
 }
 
-:RecOA-HT-DB-AntiThrombotic2 {
-    :RecOA-HT-DB-AntiThrombotic2
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Avoid thrombi"@en ;
-        vocab:strength                "should"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf :ActAdministerDipyridamole ; #:ActAdministerTramadol; Changed for HealthINF Extension at Springer
-        vocab:basedOn :CBDipyridamoleThrombus . #:CBTramadolCoagulation_assertion .
+:RecOA-AvoidGIB_provenance {
+    :RecOA-AvoidGIB  prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecOA-AvoidGIB_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecOA-AvoidGIB ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-AntiThrombotic2_provenance {
-    :RecOA-HT-DB-AntiThrombotic2_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-AntiThrombotic2 ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-AntiThrombotic2
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecOA-AvoidGIB_publicationinfo {
+    :RecOA-AvoidGIB_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
 
-:RecOA-HT-DB-AntiThrombotic2_publicationinfo {
-    :RecOA-HT-DB-AntiThrombotic2_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
+:RecHT-AntiThrombotic {
+    :RecHT-AntiThrombotic
+            a                       vocab:ClinicalRecommendation ;
+            rdfs:label              "Avoid thrombi"@en ;
+            vocab:aboutExecutionOf  :ActAdministerClopidogrel ;
+            vocab:basedOn           :CBClopidogrelThrombus ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should" .
+    
+    :CBClopidogrelThrombus
+            vocab:contribution  "positive" .
 }
 
-
-
-##############################################################
-
-:RecOA-HT-DB-ReduceLBS_head {
-	  :RecOA-HT-DB-ReduceLBS_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-ReduceLBS ;
-        nanopub:hasProvenance         :RecOA-HT-DB-ReduceLBS_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-ReduceLBS_publicationinfo .
+:RecHT-AntiThrombotic_head {
+    :RecHT-AntiThrombotic_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecHT-AntiThrombotic ;
+            nanopub:hasProvenance       :RecHT-AntiThrombotic_provenance ;
+            nanopub:hasPublicationInfo  :RecHT-AntiThrombotic_publicationinfo .
 }
 
-:RecOA-HT-DB-ReduceLBS {
-    :RecOA-HT-DB-ReduceLBS
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Reduce blood sugar level"@en ;
-        vocab:strength                "should"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf        :ActAdministerInsulin;
-        vocab:basedOn                 :CBInsulinLBS .
+:RecHT-AntiThrombotic_provenance {
+    :RecHT-AntiThrombotic
+            prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecHT-AntiThrombotic_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecHT-AntiThrombotic ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-ReduceLBS_provenance {
-    :RecOA-HT-DB-ReduceLBS_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-ReduceLBS ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-ReduceLBS
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecHT-AntiThrombotic_publicationinfo {
+    :RecHT-AntiThrombotic_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
 
-:RecOA-HT-DB-ReduceLBS_publicationinfo {
-    :RecOA-HT-DB-ReduceLBS_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
+:RecHT-Diuretic {
+    :RecHT-Diuretic  a              vocab:ClinicalRecommendation ;
+            rdfs:label              "Reduce blood pressure"@en ;
+            vocab:aboutExecutionOf  :ActAdministerThiazide ;
+            vocab:basedOn           :CBThiazideBP ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should" .
+    
+    :CBThiazideBP  vocab:contribution  "positive" .
 }
 
-##############################################################
-
-:RecOA-HT-DB-Diuretic_head {
-	  :RecOA-HT-DB-Diuretic_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-Diuretic ;
-        nanopub:hasProvenance         :RecOA-HT-DB-Diuretic_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-Diuretic_publicationinfo .
+:RecHT-Diuretic_head {
+    :RecHT-Diuretic_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecHT-Diuretic ;
+            nanopub:hasProvenance       :RecHT-Diuretic_provenance ;
+            nanopub:hasPublicationInfo  :RecHT-Diuretic_publicationinfo .
 }
 
-:RecOA-HT-DB-Diuretic {
-    :RecOA-HT-DB-Diuretic
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Reduce blood pressure"@en ;
-        vocab:strength                "should"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf        :ActAdministerThiazide;
-        vocab:basedOn                 :CBThiazideBP .
+:RecHT-Diuretic_provenance {
+    :RecHT-Diuretic  prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecHT-Diuretic_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecHT-Diuretic ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-Diuretic_provenance {
-    :RecOA-HT-DB-Diuretic_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-Diuretic ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-Diuretic
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecHT-Diuretic_publicationinfo {
+    :RecHT-Diuretic_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
 
-:RecOA-HT-DB-Diuretic_publicationinfo {
-    :RecOA-HT-DB-Diuretic_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
+:RecDB-AntiThrombotic1 {
+    :RecDB-AntiThrombotic1
+            a                       vocab:ClinicalRecommendation ;
+            rdfs:label              "Avoid thrombi"@en ;
+            vocab:aboutExecutionOf  :ActAdministerNSAID ;
+            vocab:basedOn           :CBNSAIDCoagulation ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should" .
+    
+    :CBNSAIDCoagulation
+            vocab:contribution  "positive" .
 }
 
-##############################################################
-
-##############################################################
-## Added for HealthINF Extension at Springer
-
-:RecOA-HT-DB-AntiThrombotic_head {
-	  :RecOA-HT-DB-AntiThrombotic_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-AntiThrombotic ;
-        nanopub:hasProvenance         :RecOA-HT-DB-AntiThrombotic_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-AntiThrombotic_publicationinfo .
+:RecDB-AntiThrombotic1_head {
+    :RecDB-AntiThrombotic1_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecDB-AntiThrombotic1 ;
+            nanopub:hasProvenance       :RecDB-AntiThrombotic1_provenance ;
+            nanopub:hasPublicationInfo  :RecDB-AntiThrombotic1_publicationinfo .
 }
 
-:RecOA-HT-DB-AntiThrombotic {
-    :RecOA-HT-DB-AntiThrombotic
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Avoid thrombi"@en ;
-        vocab:strength                "should"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf        :ActAdministerClopidogrel;
-        vocab:basedOn                 :CBClopidogrelThrombus .
+:RecDB-AntiThrombotic1_provenance {
+    :RecDB-AntiThrombotic1
+            prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecDB-AntiThrombotic1_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecDB-AntiThrombotic1 ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-AntiThrombotic_provenance {
-    :RecOA-HT-DB-AntiThrombotic_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-AntiThrombotic ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-AntiThrombotic
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecDB-AntiThrombotic1_publicationinfo {
+    :RecDB-AntiThrombotic1_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
 
-:RecOA-HT-DB-AntiThrombotic_publicationinfo {
-    :RecOA-HT-DB-AntiThrombotic_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
+:RecDB-AntiThrombotic2 {
+    :RecDB-AntiThrombotic2
+            a                       vocab:ClinicalRecommendation ;
+            rdfs:label              "Avoid thrombi"@en ;
+            vocab:aboutExecutionOf  :ActAdministerDipyridamole ;
+            vocab:basedOn           :CBDipyridamoleThrombus ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should" .
+    
+    :CBDipyridamoleThrombus
+            vocab:contribution  "positive" .
 }
 
-##############################################################
-
-:RecOA-HT-DB-AvoidGIB_head {
-	  :RecOA-HT-DB-AvoidGIB_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-AvoidGIB ;
-        nanopub:hasProvenance         :RecOA-HT-DB-AvoidGIB_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-AvoidGIB_publicationinfo .
+:RecDB-AntiThrombotic2_head {
+    :RecDB-AntiThrombotic2_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecDB-AntiThrombotic2 ;
+            nanopub:hasProvenance       :RecDB-AntiThrombotic2_provenance ;
+            nanopub:hasPublicationInfo  :RecDB-AntiThrombotic2_publicationinfo .
 }
 
-:RecOA-HT-DB-AvoidGIB {
-    :RecOA-HT-DB-AvoidGIB
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Avoid gastrointestinal bleeding"@en ;
-        vocab:strength                "should-not"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf        :ActAdministerAspirin;
-        vocab:basedOn                 :CBAspirinGIB .
+:RecDB-AntiThrombotic2_provenance {
+    :RecDB-AntiThrombotic2
+            prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecDB-AntiThrombotic2_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecDB-AntiThrombotic2 ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-AvoidGIB_provenance {
-    :RecOA-HT-DB-AvoidGIB_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-AvoidGIB ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-AvoidGIB
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecDB-AntiThrombotic2_publicationinfo {
+    :RecDB-AntiThrombotic2_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
 
-:RecOA-HT-DB-AvoidGIB_publicationinfo {
-    :RecOA-HT-DB-AvoidGIB_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
+:RecDM-ReduceLBS {
+    :RecDM-ReduceLBS  a             vocab:ClinicalRecommendation ;
+            rdfs:label              "Reduce blood sugar level"@en ;
+            vocab:aboutExecutionOf  :ActAdministerInsulin ;
+            vocab:basedOn           :CBInsulinLBS ;
+            vocab:partOf            :CIG-OA-HT-DB ;
+            vocab:strength          "should" .
+    
+    :CBInsulinLBS  vocab:contribution  "positive" .
 }
 
-##############################################################
-
-:RecOA-HT-DB-Painkiller_head {
-	  :RecOA-HT-DB-Painkiller_nanopub
-        a                             nanopub:Nanopublication ;
-        nanopub:hasAssertion          :RecOA-HT-DB-Painkiller ;
-        nanopub:hasProvenance         :RecOA-HT-DB-Painkiller_provenance ;
-		    nanopub:hasPublicationInfo    :RecOA-HT-DB-Painkiller_publicationinfo .
+:RecDM-ReduceLBS_head {
+    :RecDM-ReduceLBS_head
+            a                           nanopub:Nanopublication ;
+            nanopub:hasAssertion        :RecDM-ReduceLBS ;
+            nanopub:hasProvenance       :RecDM-ReduceLBS_provenance ;
+            nanopub:hasPublicationInfo  :RecDM-ReduceLBS_publicationinfo .
 }
 
-:RecOA-HT-DB-Painkiller {
-    :RecOA-HT-DB-Painkiller
-        a                             vocab:ClinicalRecommendation ;
-        rdfs:label                    "Reduce pain"@en ;
-        vocab:strength                "should"^^xsd:string ;
-        vocab:partOf                  :CIG-OA-HT-DB ;
-        vocab:aboutExecutionOf        :ActAdministerIbuprofen;
-        vocab:basedOn                 :CBIbuprofenPain .
+:RecDM-ReduceLBS_provenance {
+    :RecDM-ReduceLBS  prov:wasDerivedFrom  <http://hdl.handle.net/10222/43703> .
+    
+    :RecDM-ReduceLBS_provenance
+            a             oa:Annotation ;
+            oa:hasBody    :RecDM-ReduceLBS ;
+            oa:hasTarget  [ oa:hasSource  <http://hdl.handle.net/10222/43703> ] .
 }
 
-:RecOA-HT-DB-Painkiller_provenance {
-    :RecOA-HT-DB-Painkiller_provenance
-        a                             oa:Annotation ;
-        oa:hasBody                    :RecOA-HT-DB-Painkiller ;
-        oa:hasTarget                  [ oa:hasSource <http://hdl.handle.net/10222/43703> ] .
-    :RecOA-HT-DB-Painkiller
-        prov:wasDerivedFrom           <http://hdl.handle.net/10222/43703> .
+:RecDM-ReduceLBS_publicationinfo {
+    :RecDM-ReduceLBS_head
+            prov:generatedAtTime  "2015-10-01"^^xsd:dateTime ;
+            prov:wasAttributedTo  :Veruska .
 }
-
-:RecOA-HT-DB-Painkiller_publicationinfo {
-    :RecOA-HT-DB-Painkiller_nanopub
-        prov:generatedAtTime          "2015-10-01"^^xsd:dateTime ;
-		    prov:wasAttributedTo          :Veruska.
-}
-
-##############################################################
