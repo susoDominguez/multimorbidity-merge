@@ -1,0 +1,126 @@
+/* 1 */
+{
+    "_id" : ObjectId("60b35e6a302e4811b1c8ec76"),
+    "parameter" : "hypertension",
+    "cigInvolved" : [ 
+        "CIG-HT"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "hypertensionCodes",
+            "Jpath" : "$..hypertension.resource.code.coding[*].code",
+            "typeOf" : "number",
+            "defaultVal" : undefined,
+            "isMandatory" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "inRHS",
+            "details" : {
+                "resultArgListIndex" : 0,
+                "pathListIndex" : [ 
+                    0
+                ]
+            }
+        }
+    ],
+    "resultList" : [ 
+        {
+            "argList" : [ 
+                38341003, 
+                28119000, 
+                4210003, 
+                10725009, 
+                712832005, 
+                59621000, 
+                288250001, 
+                288250001, 
+                288250001
+            ],
+            "outcome" : []
+        }
+    ]
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("60b35ee1302e4811b1c8eca0"),
+    "parameter" : "diabetes",
+    "cigInvolved" : [ 
+        "CIG-DB"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "diabetesCodes",
+            "Jpath" : "$..diabetes.resource.code.coding[*].code",
+            "typeOf" : "number",
+            "defaultVal" : undefined,
+            "isMandatory" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "inRHS",
+            "details" : {
+                "resultArgListIndex" : 0,
+                "pathListIndex" : [ 
+                    0
+                ]
+            }
+        }
+    ],
+    "resultList" : [ 
+        {
+            "argList" : [ 
+                46635009, 
+                44054006, 
+                61165007, 
+                NumberLong(530558861000132104), 
+                21584002
+            ],
+            "outcome" : []
+        }
+    ]
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("60b35f69302e4811b1c8ecda"),
+    "parameter" : "osteoarthritis",
+    "cigInvolved" : [ 
+        "CIG-OA"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "osteoarthritisCodes",
+            "Jpath" : "$..osteoarthritis.resource.code.coding[*].code",
+            "typeOf" : "number",
+            "defaultVal" : undefined,
+            "isMandatory" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "inRHS",
+            "details" : {
+                "resultArgListIndex" : 0,
+                "pathListIndex" : [ 
+                    0
+                ]
+            }
+        }
+    ],
+    "resultList" : [ 
+        {
+            "argList" : [ 
+                396275006, 
+                239872002, 
+                239862000, 
+                68859000, 
+                239873007
+            ],
+            "outcome" : []
+        }
+    ]
+}

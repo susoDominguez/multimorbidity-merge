@@ -1,0 +1,735 @@
+{
+    "cards": [
+        {
+            "summary": "Personalised knowledge-based decision support in patients with multimorbidity",
+            "indicator": "info",
+            "source": {
+                "label": "TMR-based clinical guidelines"
+            },
+            "suggestions": [
+                {
+                    "label": "care plan decision support",
+                    "uuid": "CIG-1622388980853",
+                    "actions": [
+                        {
+                            "type": "update",
+                            "description": "Update COPD care plan",
+                            "resource": {
+                                "resourceType": "Bundle",
+                                "id": "bundle",
+                                "type": "collection",
+                                "entry": [
+                                    {
+                                        "resource": {
+                                            "resourceType": "Patient",
+                                            "id": "dummyPatient",
+                                            "active": true
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugTClopidogrel",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugTClopidogrel",
+                                                        "code": "Clopidogrel",
+                                                        "display": "administer Clopidogrel"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugCatThiazide",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugCatThiazide",
+                                                        "code": "Thiazide",
+                                                        "display": "administer Thiazide"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugTDipyridamole",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugTDipyridamole",
+                                                        "code": "Dipyridamole",
+                                                        "display": "administer Dipyridamole"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugTInsulin",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugTInsulin",
+                                                        "code": "Insulin",
+                                                        "display": "administer Insulin"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugCatNSAID",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugCatNSAID",
+                                                        "code": "NSAID",
+                                                        "display": "administer NSAID"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugTIbuprofen",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugTIbuprofen",
+                                                        "code": "Ibuprofen",
+                                                        "display": "administer Ibuprofen"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Medication",
+                                            "id": "DrugTAspirin",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/DrugTAspirin",
+                                                        "code": "Aspirin",
+                                                        "display": "administer Aspirin"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Condition",
+                                            "id": "SitNormalBC",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitNormalBC",
+                                                        "code": "SitNormalBC",
+                                                        "display": "Blood Coagulation is Normal"
+                                                    }
+                                                ]
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Condition",
+                                            "id": "SitHighBP",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitHighBP",
+                                                        "code": "SitHighBP",
+                                                        "display": "Blood pressure is high"
+                                                    }
+                                                ]
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Condition",
+                                            "id": "SitHighLBS",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitHighLBS",
+                                                        "code": "SitHighLBS",
+                                                        "display": "Level of Blood Sugar is High"
+                                                    }
+                                                ]
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Condition",
+                                            "id": "SitPatientHasPain",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitPatientHasPain",
+                                                        "code": "SitPatientHasPain",
+                                                        "display": "Patient has Pain"
+                                                    }
+                                                ]
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "Condition",
+                                            "id": "SitLowRiskGIB",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitLowRiskGIB",
+                                                        "code": "SitLowRiskGIB",
+                                                        "display": "Risk of Gastrointestinal Bleeding is low"
+                                                    }
+                                                ]
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "ForecastEffect",
+                                            "id": "SitNormalBC2SitLowBCMp",
+                                            "typeOfEffect": "main-effect",
+                                            "typeOfEvent": "therapeutic-effect",
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "appliesTo": {
+                                                "careActionInstance": [
+                                                    {
+                                                        "reference": "MedicationRequest/RecHT-AntiThrombotic"
+                                                    },
+                                                    {
+                                                        "reference": "MedicationRequest/RecDB-AntiThrombotic2"
+                                                    },
+                                                    {
+                                                        "reference": "MedicationRequest/RecDB-AntiThrombotic1"
+                                                    }
+                                                ],
+                                                "conditionAddressed": {
+                                                    "reference": "Condition/SitNormalBC"
+                                                }
+                                            },
+                                            "expectedOutcomeCode": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitLowBC",
+                                                        "code": "SitLowBC",
+                                                        "display": "Blood Coagulation is Low"
+                                                    }
+                                                ]
+                                            },
+                                            "targetMeasurement": {
+                                                "measuredProperty": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "http://anonymous.org/data/PropBC",
+                                                            "code": "PropBC",
+                                                            "display": "blood coagulation"
+                                                        }
+                                                    ]
+                                                },
+                                                "degreeOfChange": "decrease"
+                                            },
+                                            "probability": "always",
+                                            "evidence": "L1"
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "ForecastEffect",
+                                            "id": "SitHighBP2SitNormalBPMp",
+                                            "typeOfEffect": "main-effect",
+                                            "typeOfEvent": "therapeutic-effect",
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "appliesTo": {
+                                                "careActionInstance": [
+                                                    {
+                                                        "reference": "MedicationRequest/RecHT-Diuretic"
+                                                    }
+                                                ],
+                                                "conditionAddressed": {
+                                                    "reference": "Condition/SitHighBP"
+                                                }
+                                            },
+                                            "expectedOutcomeCode": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitNormalBP",
+                                                        "code": "SitNormalBP",
+                                                        "display": "Blood pressure is normal"
+                                                    }
+                                                ]
+                                            },
+                                            "targetMeasurement": {
+                                                "measuredProperty": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "http://anonymous.org/data/PropBP",
+                                                            "code": "PropBP",
+                                                            "display": "Blood pressure"
+                                                        }
+                                                    ]
+                                                },
+                                                "degreeOfChange": "decrease"
+                                            },
+                                            "probability": "always",
+                                            "evidence": "L1"
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "ForecastEffect",
+                                            "id": "SitHighLBS2SitNormalLBSMp",
+                                            "typeOfEffect": "main-effect",
+                                            "typeOfEvent": "therapeutic-effect",
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "appliesTo": {
+                                                "careActionInstance": [
+                                                    {
+                                                        "reference": "MedicationRequest/RecDM-ReduceLBS"
+                                                    }
+                                                ],
+                                                "conditionAddressed": {
+                                                    "reference": "Condition/SitHighLBS"
+                                                }
+                                            },
+                                            "expectedOutcomeCode": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitNormalLBS",
+                                                        "code": "SitNormalLBS",
+                                                        "display": "Level of Blood Sugar is normal"
+                                                    }
+                                                ]
+                                            },
+                                            "targetMeasurement": {
+                                                "measuredProperty": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "http://anonymous.org/data/PropLBS",
+                                                            "code": "PropLBS",
+                                                            "display": "Level of blood sugar"
+                                                        }
+                                                    ]
+                                                },
+                                                "degreeOfChange": "decrease"
+                                            },
+                                            "probability": "always",
+                                            "evidence": "L1"
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "ForecastEffect",
+                                            "id": "SitPatientHasPain2SitPatientHasNoPainMp",
+                                            "typeOfEffect": "main-effect",
+                                            "typeOfEvent": "therapeutic-effect",
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "appliesTo": {
+                                                "careActionInstance": [
+                                                    {
+                                                        "reference": "MedicationRequest/RecOA-Painkiller"
+                                                    }
+                                                ],
+                                                "conditionAddressed": {
+                                                    "reference": "Condition/SitPatientHasPain"
+                                                }
+                                            },
+                                            "expectedOutcomeCode": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitPatientHasNoPain",
+                                                        "code": "SitPatientHasNoPain",
+                                                        "display": "Patient has no Pain"
+                                                    }
+                                                ]
+                                            },
+                                            "targetMeasurement": {
+                                                "measuredProperty": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "http://anonymous.org/data/PropPain",
+                                                            "code": "PropPain",
+                                                            "display": "pain"
+                                                        }
+                                                    ]
+                                                },
+                                                "degreeOfChange": "decrease"
+                                            },
+                                            "probability": "always",
+                                            "evidence": "L1"
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "ForecastEffect",
+                                            "id": "SitLowRiskGIB2SitHighRiskGIBMp",
+                                            "typeOfEffect": "main-effect",
+                                            "typeOfEvent": "therapeutic-effect",
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "appliesTo": {
+                                                "careActionInstance": [
+                                                    {
+                                                        "reference": "MedicationRequest/RecOA-AvoidGIB"
+                                                    }
+                                                ],
+                                                "conditionAddressed": {
+                                                    "reference": "Condition/SitLowRiskGIB"
+                                                }
+                                            },
+                                            "expectedOutcomeCode": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/data/SitHighRiskGIB",
+                                                        "code": "SitHighRiskGIB",
+                                                        "display": "Risk of Gastrointestinal Bleeding is High"
+                                                    }
+                                                ]
+                                            },
+                                            "targetMeasurement": {
+                                                "measuredProperty": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "http://anonymous.org/data/PropRiskGIB",
+                                                            "code": "PropRiskGIB",
+                                                            "display": "risk of gastrointestinal bleeding"
+                                                        }
+                                                    ]
+                                                },
+                                                "degreeOfChange": "increase"
+                                            },
+                                            "probability": "always",
+                                            "evidence": "L1"
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecHT-AntiThrombotic",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitNormalBC"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitNormalBC2SitLowBCMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugTClopidogrel"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": [
+                                                {
+                                                    "reference": "DetectedIssue/alternative0"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecHT-Diuretic",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitHighBP"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitHighBP2SitNormalBPMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugCatThiazide"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": []
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecDB-AntiThrombotic2",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitNormalBC"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitNormalBC2SitLowBCMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugTDipyridamole"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": [
+                                                {
+                                                    "reference": "DetectedIssue/alternative0"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecDM-ReduceLBS",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitHighLBS"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitHighLBS2SitNormalLBSMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugTInsulin"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": []
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecDB-AntiThrombotic1",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitNormalBC"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitNormalBC2SitLowBCMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugCatNSAID"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": [
+                                                {
+                                                    "reference": "DetectedIssue/alternative0"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecOA-Painkiller",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitPatientHasPain"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitPatientHasPain2SitPatientHasNoPainMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugTIbuprofen"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": []
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "MedicationRequest",
+                                            "id": "RecOA-AvoidGIB",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "instantiatesUri": "http://hdl.handle.net/10222/43703",
+                                            "doNotPerform": false,
+                                            "reasonReference": [
+                                                {
+                                                    "reference": "Condition/SitLowRiskGIB"
+                                                }
+                                            ],
+                                            "forecast-effects": [
+                                                {
+                                                    "reference": "ForecastEffect/SitLowRiskGIB2SitHighRiskGIBMp"
+                                                }
+                                            ],
+                                            "medicationReference": {
+                                                "reference": "Medication/DrugTAspirin"
+                                            },
+                                            "subject": {
+                                                "reference": "Patient/dummyPatient"
+                                            },
+                                            "detectedIssue": []
+                                        }
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "DetectedIssue",
+                                            "id": "alternative0",
+                                            "status": "preliminary",
+                                            "code": {
+                                                "coding": [
+                                                    {
+                                                        "system": "http://anonymous.org/CodeSystem/interactions",
+                                                        "code": "ALTHRPY",
+                                                        "display": "Alternative Therapies With Same Intended Effect"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "implicated": [
+                                            {
+                                                "reference": "MedicationRequest/RecDB-AntiThrombotic1"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecDB-AntiThrombotic2"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecHT-AntiThrombotic"
+                                            }
+                                        ],
+                                        "mitigation": [
+                                            {
+                                                "action": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "http://anonymous.org/CodeSystem/interactions",
+                                                            "code": "NOTREQ",
+                                                            "display": "Mitigation Not Required"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "resource": {
+                                            "resourceType": "CarePlan",
+                                            "id": "CarePlan1",
+                                            "status": "active",
+                                            "intent": "plan",
+                                            "title": "personalised COPD care plan"
+                                        },
+                                        "subject": {
+                                            "reference": "Patient/dummyPatient"
+                                        },
+                                        "activity": [
+                                            {
+                                                "reference": "MedicationRequest/RecHT-AntiThrombotic"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecHT-Diuretic"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecDB-AntiThrombotic2"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecDM-ReduceLBS"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecDB-AntiThrombotic1"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecOA-Painkiller"
+                                            },
+                                            {
+                                                "reference": "MedicationRequest/RecOA-AvoidGIB"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "selectionBehaviour": "at-most-one"
+        }
+    ]
+}
