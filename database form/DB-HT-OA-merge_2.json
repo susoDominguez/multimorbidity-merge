@@ -1,0 +1,90 @@
+/* 1 */
+{
+    "parameter" : "patientId",
+    "cigInvolved" : [
+    ],
+    "pathList" : [ 
+        {
+            "label" : "patientId",
+            "Jpath" : "context.patientId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [],
+    "outcomeList" : []
+}
+/* 2 */
+
+{
+    "parameter" : "multimorbidities",
+    "cigInvolved" : [ 
+        "CIG-HT", "CIG-OA", "CIG-DB"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "multimorbidities",
+            "Jpath" : "multimorbidities.resource.code.coding[system='http://snomed.info/sct'].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "multimorbidities",
+                "pathList_labels" : { 
+                    "lhs":  "multimorbidities"
+                }
+                
+            }
+        }
+    ],
+    "outcomeList" : [ 
+        {
+            "rhsArg" : { 
+                "multimorbidities" :["38341003"]
+            },
+            "outcome" : [ 
+                "CIG-HT"
+            ]
+        },
+        {
+            "rhsArg" : { 
+                "multimorbidities" :["73211009"]
+            },
+            "outcome" : [ 
+                "CIG-DB"
+            ]
+        },
+        {
+            "rhsArg" : { 
+                "multimorbidities" :["396275006"]
+            },
+            "outcome" : [ 
+                "CIG-OA"
+            ]
+        }
+    ]
+}
+/* 3 */
+
+{
+    "parameter" : "encounterId",
+    "cigInvolved" : [],
+    "pathList" : [ 
+        {
+            "label" : "encounterId",
+            "Jpath" : "context.encounterId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [],
+    "outcomeList" : []
+}
