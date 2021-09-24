@@ -1,0 +1,115 @@
+/* 1 */
+{
+    "parameter" : "hypertension",
+    "cigInvolved" : [ 
+        "CIG-HT"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "HT_code",
+            "Jpath" : "$..hypertension.resource.code.coding[*].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "HT_code",
+                "pathList_labels" : [ 
+                    "lhs":  "HT_code"
+                ]
+                
+            }
+        }
+    ],
+    "rhsList" : [ 
+        {
+            "args" : { 
+                "HT_code" :["38341003"]
+            },
+            "outcome" : [ 
+                "CIG-HT"
+            ]
+        }
+    ]
+}
+
+/* 2 */
+{
+    "parameter" : "diabetes",
+    "cigInvolved" : [ 
+        "CIG-DB"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "DB_code",
+            "Jpath" : "$..diabetes.resource.code.coding[*].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "DB_code",
+                "pathList_labels" : [ 
+                    "lhs":  "DB_code"
+                ]
+                
+            }
+        }
+    ],
+    "rhsList" : [ 
+        {
+            "args" : { 
+                "DB_code": ["46635009"] //703137001 | Type I diabetes mellitus in remission (disorder) |
+            },
+            "outcome" : [ "CIG-DB" ]
+        }
+    ]
+}
+
+/* 3 */
+{
+    "parameter" : "osteoarthritis",
+    "cigInvolved" : [ 
+        "CIG-OA"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "OA_code",
+            "Jpath" : "$..osteoarthritis.resource.code.coding[*].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "OA_code",
+                "pathList_labels" : [ 
+                    "lhs":  "OA_code"
+                ]
+                
+            }
+        }
+    ],
+    "rhsList" : [ 
+        {
+            "args" : { 
+                "OA_code": ["396275006"] //Osteoarthritis of left ankle due to trauma | 16583281000119101
+            },
+            "outcome" : ["CIG-OA"]
+        }
+    ]
+}
