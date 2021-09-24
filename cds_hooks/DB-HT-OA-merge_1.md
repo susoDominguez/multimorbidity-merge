@@ -27,14 +27,14 @@ Field | Optionality | Prefetch Token | Type | Description
 ```json
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea", 
-  "hook": "careplan-select",
+  "hook": "DB-HT-OA-merge",
   "context": {
     "encounterId": "285064-0", 
     "patientId": "1677163",
     "diabetes": {
           "resource": {
             "resourceType": "Condition",
-            "id": "db",
+            "id": "DB",
             "code": {
               "coding": [
                 {
@@ -52,13 +52,13 @@ Field | Optionality | Prefetch Token | Type | Description
         "hypertension": {
           "resource": {
             "resourceType": "Condition",
-            "id": "ht",
+            "id": "HT",
             "code": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "38341003",
-                  "display": "Hypertensive disorder, systemic arterial"
+                  "code": "73410007",
+                  "display": "Benign secondary renovascular hypertension (disorder)"
                 }
               ]
             },
@@ -75,8 +75,8 @@ Field | Optionality | Prefetch Token | Type | Description
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "396275006",
-                  "display": "Osteoarthritis"
+                  "code": "15705241000119106",
+                  "display": "Chondrocalcinosis of bilateral shoulders (disorder)"
                 }
               ]
             },
