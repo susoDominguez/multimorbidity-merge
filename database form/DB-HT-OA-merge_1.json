@@ -24,7 +24,7 @@
     "pathList" : [ 
         {
             "label" : "HT_code",
-            "Jpath" : "context.hypertension.resource.code.coding[*].code",
+            "Jpath" : "context.hypertension.resource.code.coding[system='http://snomed.info/sct'].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : false
@@ -64,7 +64,7 @@
     "pathList" : [ 
         {
             "label" : "DB_code",
-            "Jpath" : "context.diabetes.resource.code.coding[*].code",
+            "Jpath" : "context.diabetes.resource.code.coding[system='http://snomed.info/sct'].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : false
@@ -102,7 +102,7 @@
     "pathList" : [ 
         {
             "label" : "OA_code",
-            "Jpath" : "context.osteoarthritis.resource.code.coding[*].code",
+            "Jpath" : "context.osteoarthritis.resource.code.coding[system='http://snomed.info/sct'].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : false
@@ -113,7 +113,7 @@
             "action" : "subClassOf",
             "details" : {
                 "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "OA_code",
+                "rhsArg" : "ancestor_conceptId",
                 "pathList_label" : { 
                     "lhs":  "OA_code"
                 }
