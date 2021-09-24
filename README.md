@@ -25,4 +25,6 @@ Additionally, the folder also holds data sets for care actions, causation belief
 
 
 ## cds_hooks folder
-This folder contains a definition of the contextual information following CDS Hook specifications with respect to the 3 CIGs, DB, HT and OA. It also contains an instantiation of the hook-pattern as a JSON document and a CDS Card response to the instantiation example (file `FHIR_response.json`) where all three CIGs have ben triggered, and thus combined, and converted into one CarePlan FHIR resource containing all recommendations from the three CIGs and the interactions identified among them.
+This folder contains a pair of definitions of the expected contextual information, following CDS Hook specifications, with respect to the 3 CIGs, DB, HT and OA. 
+In file `DB-HT-OA-merge_1.md`, the hook defines one FHIR resource for each condition (i.e., DB, HT and OA conditions) whereas in file `DB-HT-OA-merge_2.md` there is an array. labelled as `multimorbidities` of FHIR Condition resources. For each hook we have defined a specific Fetch document.
+Additionally, each hook comes with an example of an instantiation of the hook-pattern as a JSON document. FInally there is also a CDS Card response to ANY of the instantiation examples (file `FHIR_response.json`) where all three CIGs have ben triggered, and thus combined, and converted into one CarePlan FHIR resource containing all recommendations from the three CIGs and the interactions identified among them.
