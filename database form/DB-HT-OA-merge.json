@@ -19,9 +19,9 @@
             "details" : {
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "HT_code",
-                "pathList_labels" : [ 
+                "pathList_labels" : { 
                     "lhs":  "HT_code"
-                ]
+                }
                 
             }
         }
@@ -59,9 +59,9 @@
             "details" : {
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "DB_code",
-                "pathList_labels" : [ 
+                "pathList_labels" : { 
                     "lhs":  "DB_code"
-                ]
+                }
                 
             }
         }
@@ -97,9 +97,9 @@
             "details" : {
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "OA_code",
-                "pathList_labels" : [ 
+                "pathList_labels" : { 
                     "lhs":  "OA_code"
-                ]
+                }
                 
             }
         }
