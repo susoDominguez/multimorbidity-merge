@@ -1,0 +1,150 @@
+/* 1 */
+{
+    "parameter" : "patientId",
+    "cigInvolved" : [
+    ],
+    "pathList" : [ 
+        {
+            "label" : "patientId",
+            "Jpath" : "context.patientId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [],
+    "rhsList" : []
+}
+/* 2 */
+{
+    "parameter" : "hypertension",
+    "cigInvolved" : [ 
+        "CIG-HT"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "HT_code",
+            "Jpath" : "context.hypertension.resource.code.coding[*].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "HT_code",
+                "pathList_labels" : { 
+                    "lhs":  "HT_code"
+                }
+                
+            }
+        }
+    ],
+    "rhsList" : [ 
+        {
+            "args" : { 
+                "HT_code" :["38341003"]
+            },
+            "outcome" : [ 
+                "CIG-HT"
+            ]
+        }
+    ]
+}
+
+/* 3 */
+{
+    "parameter" : "diabetes",
+    "cigInvolved" : [ 
+        "CIG-DB"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "DB_code",
+            "Jpath" : "context.diabetes.resource.code.coding[*].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "DB_code",
+                "pathList_labels" : { 
+                    "lhs":  "DB_code"
+                }
+                
+            }
+        }
+    ],
+    "rhsList" : [ 
+        {
+            "args" : { 
+                "DB_code": ["73211009"]
+            },
+            "outcome" : [ "CIG-DB" ]
+        }
+    ]
+}
+
+/* 4 */
+{
+    "parameter" : "osteoarthritis",
+    "cigInvolved" : [ 
+        "CIG-OA"
+    ],
+    "pathList" : [ 
+        {
+            "label" : "OA_code",
+            "Jpath" : "context.osteoarthritis.resource.code.coding[*].code",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : false
+        }
+    ],
+    "actionList" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "codeSystemId":"SNOMEDCT",
+                "rhsArg" : "OA_code",
+                "pathList_labels" : { 
+                    "lhs":  "OA_code"
+                }
+                
+            }
+        }
+    ],
+    "rhsList" : [ 
+        {
+            "args" : { 
+                "OA_code": ["396275006"]
+            },
+            "outcome" : ["CIG-OA"]
+        }
+    ]
+}
+
+/* 4 */
+
+{
+    "parameter" : "encounterId",
+    "cigInvolved" : [],
+    "pathList" : [ 
+        {
+            "label" : "encounterId",
+            "Jpath" : "context.encounterId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [],
+    "rhsList" : []
+}
