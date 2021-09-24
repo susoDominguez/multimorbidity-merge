@@ -1,5 +1,22 @@
 /* 1 */
 {
+    "parameter" : "patientId",
+    "cigInvolved" : [
+    ],
+    "pathList" : [ 
+        {
+            "label" : "patientId",
+            "Jpath" : "context.patientId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [],
+    "rhsList" : []
+}
+/* 2 */
+{
     "parameter" : "hypertension",
     "cigInvolved" : [ 
         "CIG-HT"
@@ -7,7 +24,7 @@
     "pathList" : [ 
         {
             "label" : "HT_code",
-            "Jpath" : "$..hypertension.resource.code.coding[*].code",
+            "Jpath" : "context.hypertension.resource.code.coding[*].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : false
@@ -38,7 +55,7 @@
     ]
 }
 
-/* 2 */
+/* 3 */
 {
     "parameter" : "diabetes",
     "cigInvolved" : [ 
@@ -47,7 +64,7 @@
     "pathList" : [ 
         {
             "label" : "DB_code",
-            "Jpath" : "$..diabetes.resource.code.coding[*].code",
+            "Jpath" : "context.diabetes.resource.code.coding[*].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : false
@@ -69,14 +86,14 @@
     "rhsList" : [ 
         {
             "args" : { 
-                "DB_code": ["46635009"] //703137001 | Type I diabetes mellitus in remission (disorder) |
+                "DB_code": ["73211009"]
             },
             "outcome" : [ "CIG-DB" ]
         }
     ]
 }
 
-/* 3 */
+/* 4 */
 {
     "parameter" : "osteoarthritis",
     "cigInvolved" : [ 
@@ -85,7 +102,7 @@
     "pathList" : [ 
         {
             "label" : "OA_code",
-            "Jpath" : "$..osteoarthritis.resource.code.coding[*].code",
+            "Jpath" : "context.osteoarthritis.resource.code.coding[*].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : false
@@ -107,9 +124,27 @@
     "rhsList" : [ 
         {
             "args" : { 
-                "OA_code": ["396275006"] //Osteoarthritis of left ankle due to trauma | 16583281000119101
+                "OA_code": ["396275006"]
             },
             "outcome" : ["CIG-OA"]
         }
     ]
+}
+
+/* 4 */
+
+{
+    "parameter" : "encounterId",
+    "cigInvolved" : [],
+    "pathList" : [ 
+        {
+            "label" : "encounterId",
+            "Jpath" : "context.encounterId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actionList" : [],
+    "rhsList" : []
 }
