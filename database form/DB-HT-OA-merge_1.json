@@ -35,7 +35,7 @@
             "action" : "subClassOf",
             "details" : {
                 "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "HT_code",
+                "rhsArg" : "ancestor_conceptId",
                 "pathList_label" : { 
                     "lhs":  "HT_code"
                 }
@@ -46,7 +46,7 @@
     "outcomeList" : [ 
         {
             "rhsArg" : { 
-                "HT_code" :["38341003"]
+                "ancestor_conceptId" :["38341003"]
             },
             "outcome" : [ 
                 "CIG-HT"
@@ -75,7 +75,7 @@
             "action" : "subClassOf",
             "details" : {
                 "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "DB_code",
+                "rhsArg" : "ancestor_conceptId",
                 "pathList_label" : { 
                     "lhs":  "DB_code"
                 }
@@ -86,7 +86,7 @@
     "outcomeList" : [ 
         {
             "rhsArg" : { 
-                "DB_code": ["73211009"]
+                "ancestor_conceptId": ["73211009"]
             },
             "outcome" : [ "CIG-DB" ]
         }
@@ -124,7 +124,7 @@
     "outcomeList" : [ 
         {
             "rhsArg" : { 
-                "OA_code": ["396275006"]
+                "ancestor_conceptId": ["396275006"]
             },
             "outcome" : ["CIG-OA"]
         }
