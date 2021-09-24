@@ -1,4 +1,4 @@
-# <mark>`copd-assess`</mark>
+# <mark>`DB-HT-OA-merge`</mark>
 
 | Metadata | Value
 | ---- | ----
@@ -22,8 +22,6 @@ Field | Optionality | Prefetch Token | Type | Description
 <mark>`osteoarthritis`</mark> | OPTIONAL | No | *object* | <mark>FHIR Condition resource with the latest osteoarthritis diagnosis, if existing.</mark>
 
 ### Example
-
-
 ```json
 {
     "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
