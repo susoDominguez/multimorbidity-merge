@@ -26,70 +26,61 @@ Field | Optionality | Prefetch Token | Type | Description
 
 ```json
 {
-  "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea", 
-  "hook": "DB-HT-OA-merge",
-  "context": {
-    "encounterId": "285064-0", 
-    "patientId": "1677163",
-    "diabetes": {
-          "resource": {
-            "resourceType": "Condition",
-            "id": "DB",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "46635009",
-                  "display": "Diabetes mellitus type 1"
+    "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
+    "hook": "DB-HT-OA-merge",
+    "context": {
+        "encounterId": "285064-0",
+        "patientId": "1677163",
+        "diabetes": {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "DB",
+                "code": {
+                    "coding": [{
+                        "system": "http://snomed.info/sct",
+                        "code": "46635009",
+                        "display": "Diabetes mellitus type 1"
+                    }]
+                },
+                "subject": {
+                    "reference": "Patient/1677163"
                 }
-              ]
-            },
-            "subject": {
-              "reference": "Patient/1677163"
             }
-          }
-    },
+        },
         "hypertension": {
-          "resource": {
-            "resourceType": "Condition",
-            "id": "HT",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "73410007",
-                  "display": "Benign secondary renovascular hypertension (disorder)"
+            "resource": {
+                "resourceType": "Condition",
+                "id": "HT",
+                "code": {
+                    "coding": [{
+                        "system": "http://snomed.info/sct",
+                        "code": "73410007",
+                        "display": "Benign secondary renovascular hypertension (disorder)"
+                    }]
+                },
+                "subject": {
+                    "reference": "Patient/1677163"
                 }
-              ]
-            },
-            "subject": {
-              "reference": "Patient/1677163"
             }
-          }
-    },
-    "osteoarthritis" : {
-        "resource": {
-            "resourceType": "Condition",
-            "id": "oa",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "15705241000119106",
-                  "display": "Chondrocalcinosis of bilateral shoulders (disorder)"
+        },
+        "osteoarthritis": {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "oa",
+                "code": {
+                    "coding": [{
+                        "system": "http://snomed.info/sct",
+                        "code": "15705241000119106",
+                        "display": "Chondrocalcinosis of bilateral shoulders (disorder)"
+                    }]
+                },
+                "subject": {
+                    "reference": "Patient/1677163"
                 }
-              ]
-            },
-            "subject": {
-              "reference": "Patient/1677163"
             }
-          }
+        }
     }
-  }
 }
-
-
-
 ```
 
 ## Change Log
