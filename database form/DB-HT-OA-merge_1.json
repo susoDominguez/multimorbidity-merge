@@ -13,7 +13,7 @@
         }
     ],
     "actionList" : [],
-    "rhsList" : []
+    "outcomeList" : []
 }
 /* 2 */
 {
@@ -36,16 +36,16 @@
             "details" : {
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "HT_code",
-                "pathList_labels" : { 
+                "pathList_label" : { 
                     "lhs":  "HT_code"
                 }
                 
             }
         }
     ],
-    "rhsList" : [ 
+    "outcomeList" : [ 
         {
-            "args" : { 
+            "rhsArg" : { 
                 "HT_code" :["38341003"]
             },
             "outcome" : [ 
@@ -76,16 +76,16 @@
             "details" : {
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "DB_code",
-                "pathList_labels" : { 
+                "pathList_label" : { 
                     "lhs":  "DB_code"
                 }
                 
             }
         }
     ],
-    "rhsList" : [ 
+    "outcomeList" : [ 
         {
-            "args" : { 
+            "rhsArg" : { 
                 "DB_code": ["73211009"]
             },
             "outcome" : [ "CIG-DB" ]
@@ -114,16 +114,16 @@
             "details" : {
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "OA_code",
-                "pathList_labels" : { 
+                "pathList_label" : { 
                     "lhs":  "OA_code"
                 }
                 
             }
         }
     ],
-    "rhsList" : [ 
+    "outcomeList" : [ 
         {
-            "args" : { 
+            "rhsArg" : { 
                 "OA_code": ["396275006"]
             },
             "outcome" : ["CIG-OA"]
@@ -146,5 +146,5 @@
         }
     ],
     "actionList" : [],
-    "rhsList" : []
+    "outcomeList" : []
 }
