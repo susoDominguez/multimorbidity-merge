@@ -15,8 +15,8 @@
 
 Field | Optionality | Prefetch Token | Type | Description
 ----- | -------- | ---- | ---- | ----
-<mark>`encounterId`</mark> | REQUIRED | No | *string* | <mark>identifier of current encounter</mark>
-<mark>`patientId`</mark> | REQUIRED | No | *string* | <mark>identifier of current patient</mark>
+<mark>`encounterId`</mark> | REQUIRED | Yes | *string* | <mark>identifier of current encounter</mark>
+<mark>`patientId`</mark> | REQUIRED | Yes | *string* | <mark>identifier of current patient</mark>
 <mark>`diabetes`</mark> | OPTIONAL | No | *object* | <mark>FHIR Condition resource with the latest diabetes diagnoses, if existing.</mark>
 <mark>`hypertension`</mark> | OPTIONAL | No | *object* | <mark>FHIR Condition resource with the latest hypertension diagnoses, if existing.</mark>
 <mark>`osteoarthritis`</mark> | OPTIONAL | No | *object* | <mark>FHIR Condition resource with the latest osteoarthritis diagnosis, if existing.</mark>
