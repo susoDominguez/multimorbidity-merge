@@ -36,8 +36,8 @@
             "action" : "subClassOf",
             "details" : {
                 "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "multimorbidities",
-                "pathList_labels" : { 
+                "rhsArg" : "ancestor_conceptId",
+                "pathList_label" : { 
                     "lhs":  "multimorbidities"
                 }
                 
@@ -47,7 +47,7 @@
     "outcomeList" : [ 
         {
             "rhsArg" : { 
-                "multimorbidities" :["38341003"]
+                "ancestor_conceptId" :["38341003"]
             },
             "outcome" : [ 
                 "CIG-HT"
@@ -55,7 +55,7 @@
         },
         {
             "rhsArg" : { 
-                "multimorbidities" :["73211009"]
+                "ancestor_conceptId" :["73211009"]
             },
             "outcome" : [ 
                 "CIG-DB"
@@ -63,7 +63,7 @@
         },
         {
             "rhsArg" : { 
-                "multimorbidities" :["396275006"]
+                "ancestor_conceptId" :["396275006"]
             },
             "outcome" : [ 
                 "CIG-OA"
