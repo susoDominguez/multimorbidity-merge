@@ -1,4 +1,4 @@
-# <mark>`multimorbidities-merge`</mark>
+# <mark>`multimorbidity-merge`</mark>
 
 | Metadata | Value
 | ---- | ----
