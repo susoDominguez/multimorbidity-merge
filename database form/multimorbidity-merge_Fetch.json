@@ -8,8 +8,8 @@
             "label" : "patientId",
             "Jpath" : "context.patientId",
             "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : true
+            "defaultVal" : undefined,
+            "required" : false
         }
     ],
     "actionList" : [],
@@ -18,14 +18,14 @@
 /* 2 */
 
 {
-    "parameter" : "multimorbidities",
+    "parameter" : "multimorbidity",
     "cigInvolved" : [ 
         "CIG-HT", "CIG-OA", "CIG-DB"
     ],
     "pathList" : [ 
         {
-            "label" : "multimorbidities",
-            "Jpath" : "multimorbidities.resource.code.coding[system='http://snomed.info/sct'].code",
+            "label" : "multimorbidity",
+            "Jpath" : "context.multimorbidity.entry.resource[clinicalStatus='active' or clinicalStatus='relapse' or clinicalStatus='recurrent'].code.coding[system='http://snomed.info/sct'].code",
             "typeOf" : "string",
             "defaultVal" : "-1",
             "required" : true
@@ -38,7 +38,7 @@
                 "codeSystemId":"SNOMEDCT",
                 "rhsArg" : "ancestor_conceptId",
                 "pathList_label" : { 
-                    "lhs":  "multimorbidities"
+                    "lhs":  "multimorbidity"
                 }
                 
             }
@@ -70,21 +70,4 @@
             ]
         }
     ]
-}
-/* 3 */
-
-{
-    "parameter" : "encounterId",
-    "cigInvolved" : [],
-    "pathList" : [ 
-        {
-            "label" : "encounterId",
-            "Jpath" : "context.encounterId",
-            "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : true
-        }
-    ],
-    "actionList" : [],
-    "outcomeList" : []
 }
