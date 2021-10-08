@@ -1,150 +1,146 @@
 /* 1 */
 {
-    "parameter" : "patientId",
-    "cigInvolved" : [
-    ],
-    "pathList" : [ 
+    "parameter": "patientId",
+    "cigInvolved": [],
+    "pathList": [
         {
-            "label" : "patientId",
-            "Jpath" : "context.patientId",
-            "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : true
+            "label": "patientId",
+            "Jpath": "context.patientId",
+            "typeOf": "string",
+            "defaultVal": null,
+            "required": true
         }
     ],
-    "actionList" : [],
-    "outcomeList" : []
+    "actionList": [],
+    "outcomeList": []
 }
 /* 2 */
 {
-    "parameter" : "hypertension",
-    "cigInvolved" : [ 
+    "parameter": "hypertension",
+    "cigInvolved": [
         "CIG-HT"
     ],
-    "pathList" : [ 
+    "pathList": [
         {
-            "label" : "HT_code",
-            "Jpath" : "context.hypertension.resource.code.coding[system='http://snomed.info/sct'].code",
-            "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : false
+            "label": "HT_code",
+            "Jpath": "context.hypertension.resource.code.coding[system='http://snomed.info/sct'].code",
+            "typeOf": "string",
+            "defaultVal": "-1",
+            "required": false
         }
     ],
-    "actionList" : [ 
+    "actionList": [
         {
-            "action" : "subClassOf",
-            "details" : {
-                "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "ancestor_conceptId",
-                "pathList_label" : { 
-                    "lhs":  "HT_code"
+            "action": "subClassOf",
+            "details": {
+                "codeSystemId": "SNOMEDCT",
+                "outcomeListRef": "conceptId",
+                "pathListRef": {
+                    "lhs": "HT_code"
                 }
-                
             }
         }
     ],
-    "outcomeList" : [ 
+    "outcomeList": [
         {
-            "rhsArg" : { 
-                "ancestor_conceptId" :["38341003"]
-            },
-            "outcome" : [ 
+            "conceptId": [
+                "38341003"
+            ],
+            "outcome": [
                 "CIG-HT"
             ]
         }
     ]
 }
-
 /* 3 */
 {
-    "parameter" : "diabetes",
-    "cigInvolved" : [ 
+    "parameter": "diabetes",
+    "cigInvolved": [
         "CIG-DB"
     ],
-    "pathList" : [ 
+    "pathList": [
         {
-            "label" : "DB_code",
-            "Jpath" : "context.diabetes.resource.code.coding[system='http://snomed.info/sct'].code",
-            "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : false
+            "label": "DB_code",
+            "Jpath": "context.diabetes.resource.code.coding[system='http://snomed.info/sct'].code",
+            "typeOf": "string",
+            "defaultVal": "-1",
+            "required": false
         }
     ],
-    "actionList" : [ 
+    "actionList": [
         {
-            "action" : "subClassOf",
-            "details" : {
-                "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "ancestor_conceptId",
-                "pathList_label" : { 
-                    "lhs":  "DB_code"
+            "action": "subClassOf",
+            "details": {
+                "codeSystemId": "SNOMEDCT",
+                "outcomeListRef": "DB_conceptId",
+                "pathListRef": {
+                    "lhs": "DB_code"
                 }
-                
             }
         }
     ],
-    "outcomeList" : [ 
+    "outcomeList": [
         {
-            "rhsArg" : { 
-                "ancestor_conceptId": ["73211009"]
-            },
-            "outcome" : [ "CIG-DB" ]
+            "DB_conceptId": [
+                "73211009"
+            ],
+            "outcome": [
+                "CIG-DB"
+            ]
         }
     ]
 }
-
 /* 4 */
 {
-    "parameter" : "osteoarthritis",
-    "cigInvolved" : [ 
+    "parameter": "osteoarthritis",
+    "cigInvolved": [
         "CIG-OA"
     ],
-    "pathList" : [ 
+    "pathList": [
         {
-            "label" : "OA_code",
-            "Jpath" : "context.osteoarthritis.resource.code.coding[system='http://snomed.info/sct'].code",
-            "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : false
+            "label": "OA_code",
+            "Jpath": "context.osteoarthritis.resource.code.coding[system='http://snomed.info/sct'].code",
+            "typeOf": "string",
+            "defaultVal": "-1",
+            "required": false
         }
     ],
-    "actionList" : [ 
+    "actionList": [
         {
-            "action" : "subClassOf",
-            "details" : {
-                "codeSystemId":"SNOMEDCT",
-                "rhsArg" : "ancestor_conceptId",
-                "pathList_label" : { 
-                    "lhs":  "OA_code"
+            "action": "subClassOf",
+            "details": {
+                "codeSystemId": "SNOMEDCT",
+                "outcomeListRef": "OA_conceptId",
+                "pathListRef": {
+                    "lhs": "OA_code"
                 }
-                
             }
         }
     ],
-    "outcomeList" : [ 
+    "outcomeList": [
         {
-            "rhsArg" : { 
-                "ancestor_conceptId": ["396275006"]
-            },
-            "outcome" : ["CIG-OA"]
+            "OA_conceptId": [
+                "396275006"
+            ],
+            "outcome": [
+                "CIG-OA"
+            ]
         }
     ]
 }
-
 /* 4 */
-
 {
-    "parameter" : "encounterId",
-    "cigInvolved" : [],
-    "pathList" : [ 
+    "parameter": "encounterId",
+    "cigInvolved": [],
+    "pathList": [
         {
-            "label" : "encounterId",
-            "Jpath" : "context.encounterId",
-            "typeOf" : "string",
-            "defaultVal" : "-1",
-            "required" : true
+            "label": "encounterId",
+            "Jpath": "context.encounterId",
+            "typeOf": "string",
+            "defaultVal": "-1",
+            "required": true
         }
     ],
-    "actionList" : [],
-    "outcomeList" : []
+    "actionList": [],
+    "outcomeList": []
 }
