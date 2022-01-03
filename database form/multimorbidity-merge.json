@@ -1,0 +1,92 @@
+/* 1 */
+{
+    "_id" : ObjectId("614e4becb27c8b47d31d3e4d"),
+    "parameter" : "multimorbidity",
+    "cigInvolved" : [],
+    "dataPaths" : [ 
+        {
+            "label" : "codeList",
+            "Jpath" : "context.multimorbidity.entry.resource['encounter-diagnosis' in category.coding.code or '439401001' in category.coding.code].code.coding[system='http://snomed.info/sct'].code",
+            "typeOf" : "string",
+            "defaultVal" : undefined,
+            "required" : true
+        }
+    ],
+    "actions" : [ 
+        {
+            "action" : "subClassOf",
+            "details" : {
+                "arg1" : "codeList",
+                "arg2" : "conceptId"
+            }
+        }
+    ],
+    "output" : [ 
+        {
+            "queryArgs" : {
+                "conceptId" : [ 
+                    "38341003"
+                ]
+            },
+            "outcome" : [ 
+                "CIG-HT"
+            ]
+        }, 
+        {
+            "queryArgs" : {
+                "conceptId" : [ 
+                    "73211009"
+                ]
+            },
+            "outcome" : [ 
+                "CIG-DB"
+            ]
+        }, 
+        {
+            "queryArgs" : {
+                "conceptId" : [ 
+                    "396275006"
+                ]
+            },
+            "outcome" : [ 
+                "CIG-OA"
+            ]
+        }
+    ]
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("61d31caffcce2eb80168d5a5"),
+    "parameter" : "patientId",
+    "cigInvolved" : [],
+    "dataPaths" : [ 
+        {
+            "label" : "patientId",
+            "Jpath" : "context.patientId",
+            "typeOf" : "string",
+            "defaultVal" : "dummy",
+            "required" : true
+        }
+    ],
+    "actions" : [],
+    "output" : []
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("61d31cdffcce2eb80168d5ed"),
+    "parameter" : "encounterId",
+    "cigInvolved" : [],
+    "dataPaths" : [ 
+        {
+            "label" : "encounterId",
+            "Jpath" : "context.encounterId",
+            "typeOf" : "string",
+            "defaultVal" : "dummy",
+            "required" : true
+        }
+    ],
+    "actions" : [],
+    "output" : []
+}

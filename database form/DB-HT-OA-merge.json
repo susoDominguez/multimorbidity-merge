@@ -1,0 +1,263 @@
+/* 1 */
+{
+    "_id" : ObjectId("614e4bc8b27c8b47d31d3e30"),
+    "parameter" : "patientId",
+    "cigInvolved" : [],
+    "dataPaths" : [ 
+        {
+            "label" : "patientId",
+            "Jpath" : "context.patientId",
+            "typeOf" : "string",
+            "defaultVal" : "dummy",
+            "required" : true
+        }
+    ],
+    "actions" : [],
+    "output" : []
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("614e4becb27c8b47d31d3e4d"),
+    "parameter" : "osteoarthritis",
+    "cigInvolved" : [ 
+        "CIG-OA"
+    ],
+    "dataPaths" : [ 
+        {
+            "label" : "clinicalStatus",
+            "Jpath" : "context.osteoarthritis.resource.clinicalStatus.coding.code",
+            "typeOf" : "string",
+            "defaultVal" : "inactive",
+            "required" : true
+        }, 
+        {
+            "label" : "verificationStatus",
+            "Jpath" : "context.osteoarthritis.resource.verificationStatus.coding.code",
+            "typeOf" : "string",
+            "defaultVal" : "unconfirmed",
+            "required" : true
+        }, 
+        {
+            "label" : "category",
+            "Jpath" : "context.osteoarthritis.resource.category.coding[system='http://snomed.info/sct' or system='http://terminology.hl7.org/CodeSystem/condition-category'].code",
+            "typeOf" : "string",
+            "defaultVal" : "problem-list-item",
+            "required" : true
+        }
+    ],
+    "actions" : [ 
+        {
+            "action" : "in",
+            "details" : {
+                "arg2" : "clinicalStatusList",
+                "arg1" : "clinicalStatus"
+            }
+        }, 
+        {
+            "action" : "in",
+            "details" : {
+                "arg2" : "verificationStatusList",
+                "arg1" : "verificationStatus"
+            }
+        }, 
+        {
+            "action" : "subsetOf",
+            "details" : {
+                "arg2" : "categoryList",
+                "arg1" : "category"
+            }
+        }
+    ],
+    "output" : [ 
+        {
+            "queryArgs" : {
+                "clinicalStatusList" : [ 
+                    "active", 
+                    "recurrence"
+                ],
+                "verificationStatusList" : [ 
+                    "provisional", 
+                    "confirmed"
+                ],
+                "categoryStatusList" : [ 
+                    "439401001", 
+                    "encounter-diagnosis"
+                ]
+            },
+            "outcome" : [ 
+                "CIG-OA"
+            ]
+        }
+    ]
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("614e4bfbb27c8b47d31d3e56"),
+    "parameter" : "diabetes",
+    "cigInvolved" : [ 
+        "CIG-DB"
+    ],
+    "dataPaths" : [ 
+        {
+            "label" : "clinicalStatus",
+            "Jpath" : "context.diabetes.resource.clinicalStatus.coding.code",
+            "typeOf" : "string",
+            "defaultVal" : "inactive",
+            "required" : true
+        }, 
+        {
+            "label" : "verificationStatus",
+            "Jpath" : "context.diabetes.resource.verificationStatus.coding.code",
+            "typeOf" : "string",
+            "defaultVal" : "unconfirmed",
+            "required" : true
+        }, 
+        {
+            "label" : "category",
+            "Jpath" : "context.diabetes.resource.category.coding[system='http://snomed.info/sct' or system='http://terminology.hl7.org/CodeSystem/condition-category'].code",
+            "typeOf" : "string",
+            "defaultVal" : "problem-list-item",
+            "required" : true
+        }
+    ],
+    "actions" : [ 
+        {
+            "action" : "in",
+            "details" : {
+                "arg2" : "clinicalStatusList",
+                "arg1" : "clinicalStatus"
+            }
+        }, 
+        {
+            "action" : "in",
+            "details" : {
+                "arg2" : "verificationStatusList",
+                "arg1" : "verificationStatus"
+            }
+        }, 
+        {
+            "action" : "subsetOf",
+            "details" : {
+                "arg2" : "categoryList",
+                "arg1" : "category"
+            }
+        }
+    ],
+    "output" : [ 
+        {
+            "queryArgs" : {
+                "clinicalStatusList" : [ 
+                    "active", 
+                    "recurrence"
+                ],
+                "verificationStatusList" : [ 
+                    "provisional", 
+                    "confirmed"
+                ],
+                "categoryList" : [ 
+                    "439401001", 
+                    "encounter-diagnosis"
+                ]
+            },
+            "outcome" : [ 
+                "CIG-DB"
+            ]
+        }
+    ]
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("614e4c17b27c8b47d31d3e70"),
+    "parameter" : "encounterId",
+    "cigInvolved" : [],
+    "dataPaths" : [ 
+        {
+            "label" : "encounterId",
+            "Jpath" : "context.encounterId",
+            "typeOf" : "string",
+            "defaultVal" : "-1",
+            "required" : true
+        }
+    ],
+    "actions" : [],
+    "output" : []
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("61d2f136fcce2eb80168a5cd"),
+    "parameter" : "hypertension",
+    "cigInvolved" : [ 
+        "CIG-HT"
+    ],
+    "dataPaths" : [ 
+        {
+            "label" : "clinicalStatus",
+            "Jpath" : "context.hypertension.resource.clinicalStatus.coding.code",
+            "typeOf" : "string",
+            "defaultVal" : "inactive",
+            "required" : false
+        }, 
+        {
+            "label" : "verificationStatus",
+            "Jpath" : "context.hypertension.resource.verificationStatus.coding.code",
+            "typeOf" : "string",
+            "defaultVal" : "unconfirmed",
+            "required" : false
+        }, 
+        {
+            "label" : "category",
+            "Jpath" : "context.hypertension.resource.category.coding[system='http://snomed.info/sct' or system='http://terminology.hl7.org/CodeSystem/condition-category'].code",
+            "typeOf" : "string",
+            "defaultVal" : "problem-list-item",
+            "required" : true
+        }
+    ],
+    "actions" : [ 
+        {
+            "action" : "in",
+            "details" : {
+                "arg2" : "clinicalStatusList",
+                "arg1" : "clinicalStatus"
+            }
+        }, 
+        {
+            "action" : "in",
+            "details" : {
+                "arg2" : "verificationStatusList",
+                "arg1" : "verificationStatus"
+            }
+        }, 
+        {
+            "action" : "subsetOf",
+            "details" : {
+                "arg2" : "categoryList",
+                "arg1" : "category"
+            }
+        }
+    ],
+    "output" : [ 
+        {
+            "queryArgs" : {
+                "clinicalStatusList" : [ 
+                    "active", 
+                    "recurrence"
+                ],
+                "verificationStatusList" : [ 
+                    "provisional", 
+                    "confirmed"
+                ],
+                "categoryList" : [ 
+                    "439401001", 
+                    "encounter-diagnosis"
+                ]
+            },
+            "outcome" : [ 
+                "CIG-HT"
+            ]
+        }
+    ]
+}

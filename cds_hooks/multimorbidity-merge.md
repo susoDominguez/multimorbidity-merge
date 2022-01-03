@@ -15,8 +15,9 @@
 
 Field | Optionality | Prefetch Token | Type | Description
 ----- | -------- | ---- | ---- | ----
-<mark>`patientId`</mark> | OPTIONAL | Yes | *string* | <mark>FHIR `patient.id`identifier of current patient</mark>
-<mark>`multimorbidity`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources with `active` or `recurrence` or `relapse` clinicalStatus</mark>
+<mark>`patientId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `patient.id` identifier of current patient.</mark>
+<mark>`encounterId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `encounter.id` identifier of current encounter.</mark>
+<mark>`multimorbidity`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources with `active` *code* in *clinicalStatus*, and `confirmed` *code* in *verificationStatus*.</mark>
 
 ### Example
 ```json
@@ -24,15 +25,92 @@ Field | Optionality | Prefetch Token | Type | Description
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
   "hook": "multimorbidities-merge",
   "context": {
-    "patientId": "1677163",
+    "patientId": "dummyPatient",
+    "encounterId": "285064-0",
     "multimorbidity": {
       "resourceType": "Bundle",
       "entry": [
         {
           "resource": {
             "resourceType": "Condition",
+            "id": "family-history",
+            "clinicalStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "active"
+                }
+              ]
+            },
+            "verificationStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                  "code": "confirmed"
+                }
+              ]
+            },
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "problem-list-item",
+                    "display": "Problem List Item"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "312824007",
+                  "display": "Family history of cancer of colon"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/example"
+            }
+          }
+        },
+        {
+          "resource": {
+            "resourceType": "Condition",
             "id": "DB",
-            "clinicalStatus" : "recurrent",
+            "clinicalStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "active"
+                }
+              ]
+            },
+            "verificationStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                  "code": "confirmed"
+                }
+              ]
+            },
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                  },
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "439401001",
+                    "display": "Diagnosis"
+                  }
+                ]
+              }
+            ],
             "code": {
               "coding": [
                 {
@@ -51,7 +129,38 @@ Field | Optionality | Prefetch Token | Type | Description
           "resource": {
             "resourceType": "Condition",
             "id": "DB",
-            "clinicalStatus" : "active",
+            "clinicalStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "active"
+                }
+              ]
+            },
+            "verificationStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                  "code": "confirmed"
+                }
+              ]
+            },
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                  },
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "439401001",
+                    "display": "Diagnosis"
+                  }
+                ]
+              }
+            ],
             "code": {
               "coding": [
                 {
@@ -70,7 +179,38 @@ Field | Optionality | Prefetch Token | Type | Description
           "resource": {
             "resourceType": "Condition",
             "id": "DB",
-            "clinicalStatus" : "recurrent",
+            "clinicalStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "active"
+                }
+              ]
+            },
+            "verificationStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                  "code": "confirmed"
+                }
+              ]
+            },
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                  },
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "439401001",
+                    "display": "Diagnosis"
+                  }
+                ]
+              }
+            ],
             "code": {
               "coding": [
                 {
