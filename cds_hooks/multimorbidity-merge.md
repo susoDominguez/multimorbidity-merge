@@ -71,7 +71,7 @@ Field | Optionality | Prefetch Token | Type | Description
               ]
             },
             "subject": {
-              "reference": "Patient/example"
+              "reference": "Patient/dummy"
             }
           }
         },
@@ -121,7 +121,7 @@ Field | Optionality | Prefetch Token | Type | Description
               ]
             },
             "subject": {
-              "reference": "Patient/1677163"
+              "reference": "Patient/dummy"
             }
           }
         },
@@ -148,11 +148,6 @@ Field | Optionality | Prefetch Token | Type | Description
             "category": [
               {
                 "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                    "code": "encounter-diagnosis",
-                    "display": "Encounter Diagnosis"
-                  },
                   {
                     "system": "http://snomed.info/sct",
                     "code": "439401001",
@@ -171,7 +166,7 @@ Field | Optionality | Prefetch Token | Type | Description
               ]
             },
             "subject": {
-              "reference": "Patient/1677163"
+              "reference": "Patient/dummy"
             }
           }
         },
@@ -202,11 +197,6 @@ Field | Optionality | Prefetch Token | Type | Description
                     "system": "http://terminology.hl7.org/CodeSystem/condition-category",
                     "code": "encounter-diagnosis",
                     "display": "Encounter Diagnosis"
-                  },
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "439401001",
-                    "display": "Diagnosis"
                   }
                 ]
               }
@@ -221,7 +211,7 @@ Field | Optionality | Prefetch Token | Type | Description
               ]
             },
             "subject": {
-              "reference": "Patient/1677163"
+              "reference": "Patient/dummy"
             }
           }
         }

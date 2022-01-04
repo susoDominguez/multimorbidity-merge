@@ -16,6 +16,7 @@
         {
             "action" : "subClassOf",
             "details" : {
+                "codeSystemId" : "SNOMEDCT",
                 "arg1" : "codeList",
                 "arg2" : "conceptId"
             }
