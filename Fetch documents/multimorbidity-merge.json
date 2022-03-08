@@ -2,7 +2,7 @@
 {
     "_id" : ObjectId("614e4becb27c8b47d31d3e4d"),
     "parameter" : "multimorbidity",
-    "cigInvolved" : [],
+    "cigInvolved" : ["CIG-HT","CIG-OA","CIG-DB"],
     "dataPaths" : [ 
         {
             "label" : "codeList",
