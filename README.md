@@ -5,7 +5,9 @@
 The following repository has been modified from its original source material, applied as an use case for the published paper
 
 ```
-V. Zamborlini, R. Hoekstra, M. Silveira, C. Pruski, A. Teije, Generalizing the Detection of Internal and External Interactions in Clinical Guidelines, in: Proceedings of the 9th International Conference on Health Informatics (HEALTHINF2016), Rome, Italy.
+V. Zamborlini, R. Hoekstra, M. Silveira, C. Pruski, A. Teije, 
+Generalizing the Detection of Internal and External Interactions in Clinical Guidelines,
+in: Proceedings of the 9th International Conference on Health Informatics (HEALTHINF2016), Rome, Italy.
 
 ```
 
