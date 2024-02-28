@@ -133,19 +133,19 @@
                                     },
                                     {
                                         "resource": {
-                                            "resourceType": "Condition",
-                                            "id": "SitNormalBC",
+                                            "resourceType": "Observation",
+                                            "id": "SitNrmlBC",
                                             "code": {
                                                 "coding": [
                                                     {
-                                                        "system": "http://anonymous.org/data/SitNormalBC",
+                                                        "system": "http://snomed.info/sct",
                                                         "code": "SitNormalBC",
                                                         "display": "Blood Coagulation is Normal"
                                                     }
                                                 ]
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             }
                                         }
                                     },
@@ -156,14 +156,14 @@
                                             "code": {
                                                 "coding": [
                                                     {
-                                                        "system": "http://anonymous.org/data/SitHighBP",
+                                                        "system": "http://snomed.info/sct",
                                                         "code": "SitHighBP",
                                                         "display": "Blood pressure is high"
                                                     }
                                                 ]
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             }
                                         }
                                     },
@@ -174,14 +174,14 @@
                                             "code": {
                                                 "coding": [
                                                     {
-                                                        "system": "http://anonymous.org/data/SitHighLBS",
+                                                        "system": "http://snomed.info/sct",
                                                         "code": "SitHighLBS",
                                                         "display": "Level of Blood Sugar is High"
                                                     }
                                                 ]
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             }
                                         }
                                     },
@@ -192,14 +192,14 @@
                                             "code": {
                                                 "coding": [
                                                     {
-                                                        "system": "http://anonymous.org/data/SitPatientHasPain",
+                                                        "system": "http://snomed.info/sct",
                                                         "code": "SitPatientHasPain",
                                                         "display": "Patient has Pain"
                                                     }
                                                 ]
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             }
                                         }
                                     },
@@ -210,14 +210,14 @@
                                             "code": {
                                                 "coding": [
                                                     {
-                                                        "system": "http://anonymous.org/data/SitLowRiskGIB",
+                                                        "system": "http://snomed.info/sct",
                                                         "code": "SitLowRiskGIB",
                                                         "display": "Risk of Gastrointestinal Bleeding is low"
                                                     }
                                                 ]
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             }
                                         }
                                     },
@@ -228,7 +228,7 @@
                                             "typeOfEffect": "main-effect",
                                             "typeOfEvent": "therapeutic-effect",
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "appliesTo": {
                                                 "careActionInstance": [
@@ -278,7 +278,7 @@
                                             "typeOfEffect": "main-effect",
                                             "typeOfEvent": "therapeutic-effect",
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "appliesTo": {
                                                 "careActionInstance": [
@@ -322,7 +322,7 @@
                                             "typeOfEffect": "main-effect",
                                             "typeOfEvent": "therapeutic-effect",
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "appliesTo": {
                                                 "careActionInstance": [
@@ -366,7 +366,7 @@
                                             "typeOfEffect": "main-effect",
                                             "typeOfEvent": "therapeutic-effect",
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "appliesTo": {
                                                 "careActionInstance": [
@@ -410,7 +410,7 @@
                                             "typeOfEffect": "main-effect",
                                             "typeOfEvent": "therapeutic-effect",
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "appliesTo": {
                                                 "careActionInstance": [
@@ -469,7 +469,7 @@
                                                 "reference": "Medication/DrugTClopidogrel"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": [
                                                 {
@@ -500,7 +500,7 @@
                                                 "reference": "Medication/DrugCatThiazide"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": []
                                         }
@@ -527,7 +527,7 @@
                                                 "reference": "Medication/DrugTDipyridamole"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": [
                                                 {
@@ -558,7 +558,7 @@
                                                 "reference": "Medication/DrugTInsulin"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": []
                                         }
@@ -585,7 +585,7 @@
                                                 "reference": "Medication/DrugCatNSAID"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": [
                                                 {
@@ -616,7 +616,7 @@
                                                 "reference": "Medication/DrugTIbuprofen"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": []
                                         }
@@ -643,7 +643,7 @@
                                                 "reference": "Medication/DrugTAspirin"
                                             },
                                             "subject": {
-                                                "reference": "Patient/dummyPatient"
+                                                "reference": "Patient/123456"
                                             },
                                             "detectedIssue": []
                                         }
@@ -697,7 +697,7 @@
                                             "title": "personalised COPD care plan"
                                         },
                                         "subject": {
-                                            "reference": "Patient/dummyPatient"
+                                            "reference": "Patient/123456"
                                         },
                                         "activity": [
                                             {

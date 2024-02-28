@@ -8,37 +8,37 @@
 
 ## Workflow
 
-<mark>The `multimorbidity-merge` hook is triggered when the practitioner is assessing the severity of a clinical condition displayed by the current patient.</mark>
+<mark>The `multimorbidity-interactions-detection` hook is triggered when the practitioner opens a new patient record in the electronic health record system..</mark>
 
 ## Context
-<mark>The context contains information on the diagnosis of the patient with respect to the multimorbidity scenario.</mark>
+<mark>The context contains information on the active diagnoses of the patient with respect to the multimorbidity scenario.</mark>
 
 Field | Optionality | Prefetch Token | Type | Description
 ----- | -------- | ---- | ---- | ----
 <mark>`patientId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `patient.id` identifier of current patient.</mark>
 <mark>`encounterId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `encounter.id` identifier of current encounter.</mark>
-<mark>`multimorbidity`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources with `active` *code* in *clinicalStatus*, and `confirmed` *code* in *verificationStatus*.</mark>
+<mark>`clinicalConditions`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources with *category* representing a Diagnosis or problem list item *code*, and  either `active` or `recurrent` or `relapse` *code* in *clinicalStatus*, and `confirmed` or `provisional` *code* in *verificationStatus*.</mark>
 
 ### Example
 ```json
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
-  "hook": "multimorbidities-merge",
+  "hook": "multimorbidity-interactions-detection",
   "context": {
-    "patientId": "dummyPatient",
-    "encounterId": "285064-0",
-    "multimorbidity": {
+    "patientId": "123456",
+    "encounterId": "78910",
+    "clinicalConditions": {
       "resourceType": "Bundle",
       "entry": [
         {
           "resource": {
             "resourceType": "Condition",
-            "id": "family-history",
+            "id": "OA",
             "clinicalStatus": {
               "coding": [
                 {
                   "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                  "code": "active"
+                  "code": "relapse"
                 }
               ]
             },
@@ -65,20 +65,20 @@ Field | Optionality | Prefetch Token | Type | Description
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "312824007",
-                  "display": "Family history of cancer of colon"
+                  "code": "394991004",
+                  "display": "Exacerbation of osteoarthritis"
                 }
               ]
             },
             "subject": {
-              "reference": "Patient/dummy"
+              "reference": "Patient/123456"
             }
           }
         },
         {
           "resource": {
             "resourceType": "Condition",
-            "id": "DB",
+            "id": "DM",
             "clinicalStatus": {
               "coding": [
                 {
@@ -102,11 +102,6 @@ Field | Optionality | Prefetch Token | Type | Description
                     "system": "http://terminology.hl7.org/CodeSystem/condition-category",
                     "code": "encounter-diagnosis",
                     "display": "Encounter Diagnosis"
-                  },
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "439401001",
-                    "display": "Diagnosis"
                   }
                 ]
               }
@@ -121,14 +116,14 @@ Field | Optionality | Prefetch Token | Type | Description
               ]
             },
             "subject": {
-              "reference": "Patient/dummy"
+              "reference": "Patient/123456"
             }
           }
         },
         {
           "resource": {
             "resourceType": "Condition",
-            "id": "DB",
+            "id": "HT",
             "clinicalStatus": {
               "coding": [
                 {
@@ -162,51 +157,6 @@ Field | Optionality | Prefetch Token | Type | Description
                   "system": "http://snomed.info/sct",
                   "code": "73410007",
                   "display": "Benign secondary renovascular hypertension (disorder)"
-                }
-              ]
-            },
-            "subject": {
-              "reference": "Patient/dummy"
-            }
-          }
-        },
-        {
-          "resource": {
-            "resourceType": "Condition",
-            "id": "DB",
-            "clinicalStatus": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                  "code": "active"
-                }
-              ]
-            },
-            "verificationStatus": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                  "code": "confirmed"
-                }
-              ]
-            },
-            "category": [
-              {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                    "code": "encounter-diagnosis",
-                    "display": "Encounter Diagnosis"
-                  }
-                ]
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "15705241000119106",
-                  "display": "Chondrocalcinosis of bilateral shoulders (disorder)"
                 }
               ]
             },
