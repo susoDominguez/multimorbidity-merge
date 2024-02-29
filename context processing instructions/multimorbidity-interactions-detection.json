@@ -2,7 +2,7 @@
   {
     "parameter": "encounterId",
     "description": "finds FHIR encounter identifier",
-    "hookInvolved":["multimorbidity-interactions-detection"],
+    "hookInvolved": ["multimorbidity-interactions-detection"],
     "cigInvolved": [],
     "dataPaths": [
       {
@@ -19,7 +19,7 @@
     "parameter": "patientId",
     "description": "finds FHIR patient identifier",
     "cigInvolved": [],
-    "hookInvolved":["multimorbidity-interactions-detection"],
+    "hookInvolved": ["multimorbidity-interactions-detection"],
     "dataPaths": [
       {
         "label": "patientId",
@@ -35,11 +35,11 @@
     "parameter": "clinicalConditions",
     "description": "searches for snomed ct codes in FHIR condition resources with a clinical status that is either active, recurrent or relapse, that have been verified by clinical staff and that are part of a diagnosis",
     "cigInvolved": ["CIG-HT", "CIG-OA", "CIG-DM"],
-    "hookInvolved":["multimorbidity-interactions-detection"],
+    "hookInvolved": ["multimorbidity-interactions-detection"],
     "dataPaths": [
       {
         "label": "conditionsCodes",
-        "Jpath": "context.clinicalConditions.entry.resource[('439401001' in category.coding.code and 'http://snomed.info/sct' in category.coding.system) or (('problem-list-item' in category.coding.code  or 'encounter-diagnosis' in category.coding.code) and 'http://terminology.hl7.org/CodeSystem/condition-category' in category.coding.system)][('active' in clinicalStatus.coding.code or 'recurrence' in clinicalStatus.coding.code or 'relapse' in clinicalStatus.coding.code) and 'http://terminology.hl7.org/CodeSystem/condition-clinical' in clinicalStatus.coding.system][('confirmed' in verificationStatus.coding.code or 'provisional' in verificationStatus.coding.code) and 'http://terminology.hl7.org/CodeSystem/condition-ver-status' in verificationStatus.coding.system].code.coding[system='http://snomed.info/sct'].code", 
+        "Jpath": "context.clinicalConditions.entry.resource[('439401001' in category.coding.code and 'http://snomed.info/sct' in category.coding.system) or (('problem-list-item' in category.coding.code  or 'encounter-diagnosis' in category.coding.code) and 'http://terminology.hl7.org/CodeSystem/condition-category' in category.coding.system)][('active' in clinicalStatus.coding.code or 'recurrence' in clinicalStatus.coding.code or 'relapse' in clinicalStatus.coding.code) and 'http://terminology.hl7.org/CodeSystem/condition-clinical' in clinicalStatus.coding.system][('confirmed' in verificationStatus.coding.code or 'provisional' in verificationStatus.coding.code) and 'http://terminology.hl7.org/CodeSystem/condition-ver-status' in verificationStatus.coding.system].code.coding[system='http://snomed.info/sct'].code",
         "typeOf": "string",
         "required": true
       }
@@ -66,20 +66,18 @@
     "parameter": "practitionerId",
     "description": "clinical practitioner identifier",
     "cigInvolved": [],
-    "hookInvolved": [
-        "multimorbidity-interactions-detection"
-    ],
+    "hookInvolved": ["multimorbidity-interactions-detection"],
     "dataPaths": [
-        {
-            "label": "practitionerId",
-            "description": "clinical practitioner identifier",
-            "Jpath": "context.practitionerId",
-            "typeOf": "string",
-            "defaultVal": "dummy",
-            "required": true
-        }
+      {
+        "label": "practitionerId",
+        "description": "clinical practitioner identifier",
+        "Jpath": "context.practitionerId",
+        "typeOf": "string",
+        "defaultVal": "dummy",
+        "required": true
+      }
     ],
     "actions": [],
     "constraints": []
-}
+  }
 ]
