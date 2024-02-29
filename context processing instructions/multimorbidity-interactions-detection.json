@@ -2,6 +2,7 @@
   {
     "parameter": "encounterId",
     "description": "finds FHIR encounter identifier",
+    "hookInvolved":["multimorbidity-interactions-detection"],
     "cigInvolved": [],
     "dataPaths": [
       {
@@ -18,6 +19,7 @@
     "parameter": "patientId",
     "description": "finds FHIR patient identifier",
     "cigInvolved": [],
+    "hookInvolved":["multimorbidity-interactions-detection"],
     "dataPaths": [
       {
         "label": "patientId",
@@ -30,9 +32,10 @@
     "constraints": []
   },
   {
-    "parameter": "activeConditions",
+    "parameter": "clinicalConditions",
     "description": "searches for snomed ct codes in FHIR condition resources with a clinical status that is either active, recurrent or relapse, that have been verified by clinical staff and that are part of a diagnosis",
     "cigInvolved": ["CIG-HT", "CIG-OA", "CIG-DM"],
+    "hookInvolved":["multimorbidity-interactions-detection"],
     "dataPaths": [
       {
         "label": "conditionsCodes",
@@ -58,5 +61,25 @@
       { "actionsRef": { "conditionCode": 396275006 }, "output": ["CIG-OA"] },
       { "actionsRef": { "conditionCode": 73211009 }, "output": ["CIG-DM"] }
     ]
-  }
+  },
+  {
+    "parameter": "practitionerId",
+    "description": "clinical practitioner identifier",
+    "cigInvolved": [],
+    "hookInvolved": [
+        "multimorbidity-interactions-detection"
+    ],
+    "dataPaths": [
+        {
+            "label": "practitionerId",
+            "description": "clinical practitioner identifier",
+            "Jpath": "context.practitionerId",
+            "typeOf": "string",
+            "defaultVal": "dummy",
+            "required": true
+        }
+    ],
+    "actions": [],
+    "constraints": []
+}
 ]

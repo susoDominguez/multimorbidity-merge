@@ -11,13 +11,14 @@
 <mark>The `multimorbidity-interactions-detection` hook is triggered when the practitioner opens a new patient record in the electronic health record system..</mark>
 
 ## Context
-<mark>The context contains information on the active diagnoses of the patient with respect to the multimorbidity scenario.</mark>
+<mark>The context contains information on the active diagnoses of the patient regarding the multimorbidity scenario.</mark>
 
 Field | Optionality | Prefetch Token | Type | Description
 ----- | -------- | ---- | ---- | ----
 <mark>`patientId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `patient.id` identifier of current patient.</mark>
 <mark>`encounterId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `encounter.id` identifier of current encounter.</mark>
-<mark>`clinicalConditions`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources with *category* representing a Diagnosis or problem list item *code*, and  either `active` or `recurrent` or `relapse` *code* in *clinicalStatus*, and `confirmed` or `provisional` *code* in *verificationStatus*.</mark>
+<mark>`practitionerId`</mark> | OPTIONAL | Yes | *string* | <mark>FHIR `practitioner.id` identifier of current practitioner.</mark>
+<mark>`clinicalConditions`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources that are currently active, recurrent, or relapse (Condition.clinicalStatus), that have been confirmed or is provisional by clinical staff (verificationStatus.coding.code) and that are categorised as problem-list-item or encounter-diagnosis or SNOMED CT Diagnosis (category.coding.code).</mark>
 
 ### Example
 ```json
@@ -27,6 +28,7 @@ Field | Optionality | Prefetch Token | Type | Description
   "context": {
     "patientId": "123456",
     "encounterId": "78910",
+    "practitionerId": "gp123",
     "clinicalConditions": {
       "resourceType": "Bundle",
       "entry": [
