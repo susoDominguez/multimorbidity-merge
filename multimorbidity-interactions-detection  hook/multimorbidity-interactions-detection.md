@@ -1,27 +1,34 @@
 # <mark>`multimorbidity-merge`</mark>
 
-| Metadata | Value
-| ---- | ----
-| specificationVersion | 1.2
-| hookVersion | 2.2
-| hookMaturity | [0 - Draft](../../specification/1.0/#hook-maturity-model)
+| Metadata             | Value                                                     |
+| -------------------- | --------------------------------------------------------- |
+| specificationVersion | 1.2                                                       |
+| hookVersion          | 2.2                                                       |
+| hookMaturity         | [0 - Draft](../../specification/1.0/#hook-maturity-model) |
 
 ## Workflow
 
 <mark>An example of a CDS service designed to dynamically filter and activate applicable guideline fragments when merging the OA, HT and DM guidelines using real-time contextual input..</mark>
 
 ## Context
+
 <mark>The context contains information on the active diagnoses of the patient regarding the multimorbidity scenario.</mark>
 
-Field | Optionality | Prefetch Token | Type | Description
------ | -------- | ---- | ---- | ----
-<mark>`patientId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `patient.id` identifier of current patient.</mark>
-<mark>`encounterId`</mark> | REQUIRED | Yes | *string* | <mark>FHIR `encounter.id` identifier of current encounter.</mark>
-<mark>`practitionerId`</mark> | OPTIONAL | Yes | *string* | <mark>FHIR `practitioner.id` identifier of current practitioner.</mark>
-<mark>`birthdate`</mark> | REQUIRED | Yes | *date* | <mark>FHIR `practitioner.id` identifier of current practitioner.</mark>
-<mark>`clinicalConditions`</mark> | REQUIRED | Yes | *object* | <mark>FHIR Bundle of Condition resources that are currently active, recurrent, or relapse (Condition.clinicalStatus), that have been confirmed or is provisional by clinical staff (verificationStatus.coding.code) and that are categorised as problem-list-item or encounter-diagnosis or SNOMED CT Diagnosis (category.coding.code).</mark>
+| Field                               | Optionality | Prefetch Token | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------------------- | ----------- | -------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <mark>`patientId`</mark>            | REQUIRED    | No             | _string_  | <mark>FHIR `patient.id` identifier of current patient.</mark>                                                                                                                                                                                                                                                                                                                                                        |
+| <mark>`encounterId`</mark>          | REQUIRED    | No             | _string_  | <mark>FHIR `encounter.id` identifier of current encounter.</mark>                                                                                                                                                                                                                                                                                                                                                    |
+| <mark>`practitionerId`</mark>       | OPTIONAL    | No             | _string_  | <mark>FHIR `practitioner.id` identifier of current practitioner.</mark>                                                                                                                                                                                                                                                                                                                                              |
+| <mark>`birthdate`</mark>            | REQUIRED    | No             | _date_    | <mark>Patient’s date of birth; used for age-based rule logic (e.g., statin threshold ≥ 40 y).</mark>                                                                                                                                                                                                                                                                                                                 |
+| <mark>`vitalSigns`</mark>           | OPTIONAL    | No             | _object_  | <mark>FHIR Bundle (observation) Latest weight, height, BMI, blood pressure readings. Needed for BMI-driven metformin rule and HT control logic; if absent, the service will query them on demand.</mark>                                                                                                                                                                                                             |
+| <mark>`recentLabResults`</mark>     | OPTIONAL    | No             | _object_  | <mark>FHIR Bundle (observation) More recent laboratory values that influence therapy choices (e.g., eGFR, HbA1c, lipid panel, urinary albumin).</mark>                                                                                                                                                                                                                                                               |
+| <mark>`medicationStatements`</mark> | OPTIONAL    | No             | _object_  | <mark>FHIR Bundle (MedicationStatement/MedicationRequest) All active or recently issued medications—used to detect metformin, sulfonylurea, pioglitazone, statins, antiplatelets, NSAIDs, antihypertensives.</mark>                                                                                                                                                                                                  |
+| <mark>`allergyIntolerances`</mark>  | OPTIONAL    | No             | _object_  | <mark>FHIR Bundle (AllergyIntolerance) Captures aspirin allergy (to switch to clopidogrel) and NSAID hypersensitivity.</mark>                                                                                                                                                                                                                                                                                        |
+| <mark>`pregnancyStatus`</mark>      | OPTIONAL    | No             | _boolean_ | <mark>true if patient is pregnant; shortens retinal-screen interval to ≤ 6 months and blocks ACE-I suggestion.</mark>                                                                                                                                                                                                                                                                                                |
+| <mark>`clinicalConditions`</mark>   | REQUIRED    | No             | _object_  | <mark>FHIR Bundle of Condition resources that are currently active, recurrent, or relapse (Condition.clinicalStatus), that have been confirmed or is provisional by clinical staff (verificationStatus.coding.code) and that are categorised as problem-list-item or encounter-diagnosis or SNOMED CT Diagnosis (category.coding.code). Drives rule activation for diabetes, hypertension and osteoarthritis.</mark> |
 
 ### Example
+
 ```json
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
@@ -172,11 +179,10 @@ Field | Optionality | Prefetch Token | Type | Description
     }
   }
 }
-
 ```
 
 ## Change Log
 
-Version | Description
----- | ----
-1.0 | FHIR resource parameters
+| Version | Description              |
+| ------- | ------------------------ |
+| 1.0     | FHIR resource parameters |
