@@ -1,4 +1,4 @@
-# <mark>`multimorbidity-merge`</mark>
+# <mark>`context-driven-guideline-selector`</mark>
 
 | Metadata             | Value                                                     |
 | -------------------- | --------------------------------------------------------- |
@@ -32,7 +32,7 @@
 ```json
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
-  "hook": "multimorbidity-interactions-detection",
+  "hook": "context-driven-guideline-selector",
   "context": {
     "patientId": "123456",
     "encounterId": "78910",
