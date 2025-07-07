@@ -1,4 +1,4 @@
-# <mark>`HT-OA-DB-merger`</mark>
+# <mark>`oa-ht-dm-2-merger`</mark>
 
 | Metadata             | Value                                                     |
 | -------------------- | --------------------------------------------------------- |
